@@ -11,16 +11,16 @@
     <ul class="flex space-x-4">
       {% for item in navigation.items %}
         {% if item.url == page.url %}
-          {% assign highlight = 'text-green-700' %}
+          {% assign highlight = 'cursor-default' %}
           {% assign current = 'aria-current="page"' %}
         {% else %}
-          {% assign highlight = 'hover:text-green-900' %}
+          {% assign highlight = 'underline' %}
           {% assign current = '' %}
         {% endif %}
         <li>
           <a
             href="{{ item.url }}"
-            class="text-base font-bold underline {{ highlight }}"
+            class="text-base font-bold {{ highlight }}"
             {{ current }}
           >
             {{ item.text }}

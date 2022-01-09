@@ -14,6 +14,7 @@
   "keywords": [
     "alpinejs",
     "eleventy",
+    "liquidjs",
     "netlify",
     "snowpack",
     "tailwindcss"
@@ -30,11 +31,11 @@
   "homepage": "https://11st-starter-kit.netlify.app",
   "lint-staged": {
     "*.{css,html}": "stylelint --fix",
-    "*.{js,html}": "eslint --fix"
+    "*.{js,html}": "eslint --cache --fix"
   },
   "scripts": {
     "clean": "rimraf src/_site",
-    "serve": "serve --no-clipboard --listen 8080 dist",
+    "preview": "serve --no-clipboard --listen 8080 dist",
     "dev": "cross-env NODE_ENV=development run-s clean dev:*",
     "dev:eleventy": "npx @11ty/eleventy",
     "dev:snowpack": "snowpack dev",
@@ -53,7 +54,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^1.0.0",
     "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.5",
     "@babel/eslint-parser": "^7.15.8",
@@ -68,9 +69,11 @@
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-compat": "^4.0.0",
-    "eslint-plugin-html": "^6.1.1",
+    "eslint-plugin-html": "^6.2.0",
     "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
     "husky": "^7.0.0",
     "lint-staged": "^12.1.2",
     "npm-run-all": "^4.1.5",
@@ -82,6 +85,7 @@
     "serve": "^13.0.2",
     "snowpack": "^3.5.0",
     "stylelint": "^14.1.0",
+    "stylelint-config-html": "^1.0.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^24.0.0",
     "stylelint-no-unsupported-browser-features": "^5.0.2",
@@ -91,6 +95,6 @@
   },
   "dependencies": {
     "alpinejs": "^3.0.1",
-    "core-js": "^3.19.3"
+    "core-js": "^3.20.2"
   }
 }

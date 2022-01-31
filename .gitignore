@@ -1,9 +1,8 @@
 # dependecies installed by npm
 node_modules
-web_modules
 
 # build artefacts
-src/_site
+_site
 dist
 
 # secrets
@@ -15,9 +14,6 @@ report.html
 
 # cache
 .eslintcache
-
-# macOS related files
-.DS_Store
 
 # Local Netlify folder
 .netlify

@@ -42,7 +42,7 @@
     "preview": "npx vite preview",
     "predev": "run-s clean",
     "dev": "cross-env NODE_ENV=development run-p dev:*",
-    "dev:eleventy": "npx @11ty/eleventy --watch",
+    "dev:eleventy": "npx @11ty/eleventy --incremental --watch",
     "dev:vite": "npx vite",
     "prebuild": "run-s clean",
     "build": "cross-env NODE_ENV=production run-s build:*",
@@ -92,7 +92,7 @@
     "stylelint-no-unsupported-browser-features": "^5.0.2",
     "stylelint-order": "^5.0.0",
     "tailwindcss": "^3.0.1",
-    "vite-plugin-pwa": "^0.11.13"
+    "vite-plugin-pwa": "^0.12.0"
   },
   "dependencies": {
     "alpinejs": "^3.0.1",

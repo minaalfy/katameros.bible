@@ -1,0 +1,67 @@
+---
+layout: 'layouts/reading.html'
+title: 'اليوم الثلاثون من شهر برمهات'
+permalink: annual/7-30.html
+---
+  {% block content %}
+    <section id="readings">
+      <ul>
+      {% if '19.34:7-8' != 'null' %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">العشية</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeVespers '19.34:7-8' '40.16:24-28' %}
+          </div>
+        </div>
+      </li>
+      {% endif %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">باكر</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeMatins '19.97:7-8' '40.18:10-20' '' %}
+          </div>
+        </div>
+      </li>
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <h3 class="flex items-center justify-between">
+            <span class="kufi">القداس</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </h3>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeLitugy '58.2:5-18' '60.1:3-12' '44.10:21-33' '19.138:1-2' '42.1:26-38' %}
+          </div>
+        </div>
+      </li>
+        </ul>
+    </section>
+    <section id="article">
+      <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
+      {% createArticleAccordions firstName, lastName %}
+        <p>قراءة هذا اليوم ( تذكار غبريال المبشر رئيس الملائكة ونياحة شمشون أحد قضاة بني إسرائيل ) مُحوَّلة علي قراءة يوم إثنين وعشرين كيهك ( تذكار تكريس كنيسة رئيس الملائكة غبريال في مدينة قيسارية وظهور العجائب بها )</p>
+<p>+ يضيف الدفنار والسنكسار أيضاً تذكار نقل أعضاء القديس يعقوب الشهير بالمقطع</p>
+<h4>كلمات القديس أغسطينوس عن شمشون</h4>
+<p>[لنحذر أيها الأخوة المحبوبون قدر ما نستطيع لئلا نعاني روحيًا ما عاناه شمشون جسديًا. لنفهم العقل بكونه الرجل (شمشون) والجسد ترمز له المرأة (دليلة). إن كان الإنسان يخضع لجسده عندما يتملقه بلطف للانهماك في الملذات فسيعاني من جسده ما عاناه شمشون من المرأة (دليلة). لذلك يليق بنا أيها الأعزاء المحبوبون بمعونة الله أن نجاهد ما استطعنا محقيقين قول الرسول عن نفسه: &#8220;أقمع جسدي وأستعبده (أخضعه)&#8221; (١كو ٩ : ٢٧). لنحذر بمعونة الله من موسى العدو الذي حلق رأس الجنس البشري عندما انخدع آدم وحواء بحيلة لئلا يعلو رأسنا نحن أيضًا، لأن رأسنا هو المسيح. إن كنا نستسلم لامرأة أي لشهوات الجسد المتملقة أو للشرور الأخرى فإننا ننخدع ونُحرم من النعمة الروحية ونكون كمن نُزع عنه شعر النذر&#8230; يوجد موسى يقطع بطريقة نافعة وآخر بطريقة ضارة، موسى الشفاء واهب الجمال لنا هو المسيح ربنا، الذي يقطع من قلوبنا أفكار الشر الضارة. إنه يحلق الرذائل عن النفس، ينير الرأس، ويهب الذهن جمالًا ويحررنا من الشعر المميت الذي للعبودية البائسة ويجعل حياتنا مقدسة وفي طهارة وتدبير عندما تنمو كشعر النذير من جديد&#8230; انظروا لقد أظهرت الموسى الذي نطلبه، أما الآخر فنرفضه ونتجنبه. الموسى المكرم هو المسيح والموسى المهلك هو الشيطان. المسيح هو رأسنا كقول الرسول، والشعر إما أن يكون فضائل أو رذائل، لذلك عندما تحدث النبي عن خطاياه قال: &#8220;أكثر من شعر رأسي (الذي يبغضونني بلا سبب)&#8221; (مز ٦٩ : ٤). فالفصائل والرذائل يرمز لها بالشعر، عندما نحلق بالمسيح نتحرر من كل الرذائل، وعندما نحلق بالشيطان نُحرم من كل الفضائل].</p>
+<p>كما يقول:</p>
+<p>[إن خضع إنسان لشهوة أو انهمك في ملذة يفعل به جسده ما فعلته دليلة بشمشون ]<a href="#_ftn1" name="_ftnref1">[1]</a></p>
+<hr />
+<p><a href="#_ftnref1" name="_ftn1">[1]</a> تفسير سفر القضاة اغسطينوس ( الإصحاح السادس عشر ) &#8211; القمص تادرس يعقوب ملطي</p>
+
+      {% endcreateArticleAccordions %}
+    </section>
+  {% endblock %}
+  

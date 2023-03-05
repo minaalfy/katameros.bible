@@ -1,0 +1,62 @@
+---
+layout: 'layouts/reading.html'
+title: 'اليوم السابع عشر من شهر مسري'
+permalink: annual/12-17.html
+---
+  {% block content %}
+    <section id="readings">
+      <ul>
+      {% if '19.34:19-20' != 'null' %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">العشية</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeVespers '19.34:19-20' '41.1:16-22' %}
+          </div>
+        </div>
+      </li>
+      {% endif %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">باكر</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeMatins '19.37:39-40' '40.4:18-22' '' %}
+          </div>
+        </div>
+      </li>
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <h3 class="flex items-center justify-between">
+            <span class="kufi">القداس</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </h3>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeLitugy '48.1:1-19' '59.1:1-12' '44.15:12-21' '19.97:11-12' '41.10:35-45' %}
+          </div>
+        </div>
+      </li>
+        </ul>
+    </section>
+    <section id="article">
+      <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
+      {% createArticleAccordions firstName, lastName %}
+        <p>تتماثل قراءات اليوم ( شهادة القديس يعقوب بن فجوج ) مع قراءات سابع وعشرين هاتور ( شهادة القديس يعقوب المقطع الفارسي ) في كل شئ عدا المزامير التي تتشابه مع مزامير ثالث وعشرين برمودة</p>
+<p>لذلك يُمْكِن الرجوع لشرح قراءات يوم سابع وعشرين هاتور وهو الرأي الذي يقوله أيضاً الأرشيدياكون بانوب عبده في كتابه كنوز النعمة ( من برمهات إلي النسئ ص ٢٢٦ )</p>
+<p>&#8221; حيث أن فصول الإنجيل والرسائل الخاصة بهذا اليوم جميعها هي بعينها فصول يوم ٢٧ هاتور ، وهو تذكار شهادة يعقوب الفارسي المقطع ، وأن كل ما هناك من فرق بين فصول هذين اليومين هو في المزامير ، فالأرجح أن اعتبار يوم ١٧ مسري من الأيام الخاصة هو من قبيل السهو في النقل ويجب إحالة فصوله علي فصول ٢٧ هاتور والتغاضي عن مزاميره الخاصة التي تخالف مزامير ٢٧ هاتور وذلك إتباعاً لقاعدة تحاشي التكرار وهي القاعدة التي اتبعت عند طبع القطمارس الجديد المستعمل الآن فقد صرف فيه النظر عن المزامير الخاصة بكل يوم من الأيام المحالة كما وردت بالقطمارس القديم اكتفاء بمزامير الأيام المحال عليها أي الأيام الخاصة ذات الفصول الخاصة &#8220;</p>
+
+      {% endcreateArticleAccordions %}
+    </section>
+  {% endblock %}
+  

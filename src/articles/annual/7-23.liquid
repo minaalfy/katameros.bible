@@ -1,0 +1,77 @@
+---
+layout: 'layouts/reading.html'
+title: 'اليوم الثالث والعشرون من شهر برمهات'
+permalink: annual/7-23.html
+---
+  {% block content %}
+    <section id="readings">
+      <ul>
+      {% if '19.105:14-15' != 'null' %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">العشية</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeVespers '19.105:14-15' '42.11:37-51' %}
+          </div>
+        </div>
+      </li>
+      {% endif %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">باكر</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeMatins '19.105:26,27,45' '40.17:1-9' '' %}
+          </div>
+        </div>
+      </li>
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <h3 class="flex items-center justify-between">
+            <span class="kufi">القداس</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </h3>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeLitugy '58.11:17-27' '61.1:19-21*@+61.2:1-8' '44.15:21-29' '19.99:6-7' '40.23:13-36' %}
+          </div>
+        </div>
+      </li>
+        </ul>
+    </section>
+    <section id="article">
+      <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
+      {% createArticleAccordions firstName, lastName %}
+        <p>قراءة هذا اليوم ( نياحة دانيال النبي ) مُحوَّلة علي قراءة يوم ثامن توت ( نياحة موسي النبي )</p>
+<h3> ماذا قال آباء الكنيسة عن دانيال والثلاثة فتية</h3>
+<h4>القديس جيروم</h4>
+<p>&#8221; ذاك الذي أُخذ في السبيّ بسبب خطايا أسلافه تمتع بمكافأة فورية من أجل عظم فضائله. لأنه وضع في قلبه إلاَّ يتنجس بطعام من مائدة الملك، وفضَّل غذاءً متضعًا عن الأطايب، لهذا وهبه الرب منحة سخية، إذ نال نعمة ورحمة في عيني رئيس الخصيان. بهذا يمكننا أن نفهم أنه حتى في الظروف القاسية يُحبْ القديسون بواسطة غير المؤمنين، هذا من قبيل مراحم الله وليس من أجل صلاح الفاسدي.</p>
+<p></p>
+<h4>القديس هيبوليتس الروماني</h4>
+<p>&#8221; مباركون هم هؤلاء الذين يحفظون عهد آبائهم ولا يعصون الناموس المُعطى بواسطة موسى، بل يخافون الله الذي أُعلن بواسطته. هؤلاء مع كونهم مسبيين في بلاد غريبة لم تغْرِهم اللحوم الشهية، ولا صاروا عبيدًا لملذَّات الخمر، ولا أمسك بهم إغراء مجد الأمراء؛ بل حفظوا أفواههم مقدسة وطاهرة، وسبحوا بهذه الأفواه الآب السماوي.<a href="#_ftn1" name="_ftnref1">[1]</a></p>
+<h4>القديس جيروم</h4>
+<p>&#8221; مطوَّبة هي الحياة التي تقود حتى الأعداء فلا يجدوا فيها علة للاتهامات إلاَّ ربما من جهة شريعة الله.&#8221;</p>
+<h4>العلَّامة أوريجانوس</h4>
+<p>ذاك الذي يُصلي ويقول: &#8220;لا تسلم للوحوش النفس التي تعترف لك&#8221; (راجع مزمور ٧٤ : ١٩)، يُسمع له، ولا يعاني من الأفعى والحيات، لأنه يستطيع بالمسيح أن يطأ الأسد والتنِّين (مز ٩١ : ١٣)، وينال القوة المجيدة التي يهبها يسوع لنطأ الحيات والعقارب وكل قوة العدو (لو ١٠ : ١٩)، فلا يؤذيه شيء من قِبَلْ هذه الأشياء. مثل هذا يلزمه أن يشكر الله أكثر من دانيال، لأنه يخلص من وحوش أكثر رعبًا وأذية</p>
+<p>لقد كُممت أفواه أسود غير منظورة بالنسبة لدانيال النبي لكي بالأكثر لا تُضر نفسه من الأسود المنظورة.<a href="#_ftn2" name="_ftnref2">[2]</a></p>
+<h4>القديس أثناسيوس الرسولي</h4>
+<p>&#8221; من التاريخ الفعلي لمجيء المخلص وحلوله الإلهي بيننا، إذ قال: &#8220;سبعون أسبوعًا قضيت على شعبك&#8230;&#8221; ربما بالنسبة للنبوات الأخرى يمكنهم أن يجدوا أعذارًا وأن يرجئوا ما هو مكتوب إلى المستقبل. لكنهم ماذا يستطيعون أن يقولوا عن هذه (النبوة)، أو كيف يمكنهم أن يواجهوها تمامًا؟ فإنها ليست فقط تُشير إلى المسيح، بل تُعلن أن ذاك الذي يُمسح ليس إنسانًا مجردًا بل قدوس القديسين، وأن أورشليم تثبت إلى حين مجيئه، وعندئذ تتوقف النبوة والرؤيا في إسرائيل.&#8221;<a href="#_ftn3" name="_ftnref3">[3]</a></p>
+<hr />
+<p><a href="#_ftnref1" name="_ftn1">[1]</a> تفسير سفر دانيال ( الإصحاح الأول ) &#8211; القمص تادرس يعقوب ملطي</p>
+<p><a href="#_ftnref2" name="_ftn2">[2]</a> تفسير سفر دانيال ( الإصحاح السادس ) &#8211; القمص تادرس يعقوب ملطي</p>
+<p><a href="#_ftnref3" name="_ftn3">[3]</a> تفسير سفر دانيال ( الإصحاح التاسع ) &#8211; القمص تادرس يعقوب ملطي</p>
+
+      {% endcreateArticleAccordions %}
+    </section>
+  {% endblock %}
+  

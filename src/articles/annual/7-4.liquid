@@ -1,0 +1,61 @@
+---
+layout: 'layouts/reading.html'
+title: 'اليوم الرابع من شهر برمهات'
+permalink: annual/7-4.html
+---
+  {% block content %}
+    <section id="readings">
+      <ul>
+      {% if '19.32:11,6' != 'null' %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">العشية</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeVespers '19.32:11,6' '40.25:14-23' %}
+          </div>
+        </div>
+      </li>
+      {% endif %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">باكر</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeMatins '19.112:1-2' '42.6:17-23' '' %}
+          </div>
+        </div>
+      </li>
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <h3 class="flex items-center justify-between">
+            <span class="kufi">القداس</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </h3>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeLitugy '45.4:13-25*@+45.5:1-5' '60.1:3-12' '44.11:15-24' '19.19:4*@+19.132:9-10' '40.16:13-19' %}
+          </div>
+        </div>
+      </li>
+        </ul>
+    </section>
+    <section id="article">
+      <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
+      {% createArticleAccordions firstName, lastName %}
+        <p>قراءة هذا اليوم ( إجتماع مجمع في جزيرة بني عمر يُدعي الأربعة عشرية ) مُحوَّلة علي قراءة يوم تاسع هاتور ( إجتماع مجمع الثلاث مئة والثمانية عشر بنيوية )</p>
+<p>لا يذكر الدفنار إجتماع مجمع في جزيرة بتي عمر ، بينما يذكر شهادة القديس هابوليوس الأمير</p>
+
+      {% endcreateArticleAccordions %}
+    </section>
+  {% endblock %}
+  

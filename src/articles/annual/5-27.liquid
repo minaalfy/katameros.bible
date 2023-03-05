@@ -1,0 +1,61 @@
+---
+layout: 'layouts/reading.html'
+title: 'اليوم السابع والعشرون من شهر طوبة'
+permalink: annual/5-27.html
+---
+  {% block content %}
+    <section id="readings">
+      <ul>
+      {% if '19.4:6-8' != 'null' %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">العشية</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeVespers '19.4:6-8' '40.16:24-28' %}
+          </div>
+        </div>
+      </li>
+      {% endif %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">باكر</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeMatins '19.5:11-12' '40.10:34-42' '' %}
+          </div>
+        </div>
+      </li>
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <h3 class="flex items-center justify-between">
+            <span class="kufi">القداس</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </h3>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeLitugy '45.8:18-30' '60.3:8-15' '44.19:23-41' '19.68:35,3' '42.12:4-12' %}
+          </div>
+        </div>
+      </li>
+        </ul>
+    </section>
+    <section id="article">
+      <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
+      {% createArticleAccordions firstName, lastName %}
+        <p>قراءة هذا اليوم (شهادة القديس بيفامون من ديمون ونقل أعضاء تيموثاوس الرسول من أفسس إلي القسطنطينية ) مُحوَّلة علي قراءة يوم سابع وعشرين برمودة ( شهادة القديس بقطر بن رومانوس )</p>
+<p>يذكر الدفنار والسنكسار شهادة أبي فام الجندي وشهادة القديس سرابيون وتذكار الملاك سوريال ، بينما يذكر القطمارس فقط نقل أعضاء تيموثاؤس الرسول ، وغالباً يقصد القطمارس بالقديس بيفامون أبي فام لأنه يذكر في الطرح الآدام في الدفنار &#8221; يا أبانا أبيفامون &#8220;.</p>
+
+      {% endcreateArticleAccordions %}
+    </section>
+  {% endblock %}
+  

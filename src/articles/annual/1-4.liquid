@@ -1,0 +1,62 @@
+---
+layout: 'layouts/reading.html'
+title: 'اليوم الرابع من شهر توت'
+permalink: annual/1-4.html
+---
+  {% block content %}
+    <section id="readings">
+      <ul>
+      {% if '19.105:14-15' != 'null' %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">العشية</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeVespers '19.105:14-15' '42.11:37-51' %}
+          </div>
+        </div>
+      </li>
+      {% endif %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">باكر</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeMatins '19.105:26,27,45' '40.17:1-9' '' %}
+          </div>
+        </div>
+      </li>
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <h3 class="flex items-center justify-between">
+            <span class="kufi">القداس</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </h3>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeLitugy '58.11:17-27' '61.1:19-21*@+61.2:1-8' '44.15:21-29' '19.99:6-7' '40.23:13-36' %}
+          </div>
+        </div>
+      </li>
+        </ul>
+    </section>
+    <section id="article">
+      <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
+      {% createArticleAccordions firstName, lastName %}
+        <p align="right"><span dir="RTL" lang="AR-SA">قراءة اليوم الرابع من توت (نياحة يشوع بن نون والقديس سمعان الحبيس) مُحوَّلة علي قراءة يوم ٨ توت وهي القراءة الخاصة بأنبياء العهد القديم ( نياحة موسي النبي )</span><span lang="NL">  </span></p>
+<p align="right"><span dir="RTL" lang="AR-SA">وتذكار يشوع بن نون يأتي مرتان في السنة ( ٤ توت ، ٢٦ بؤونه ) واليومان مُحوَّلة قراءتهما علي قراءة يوم ٨ توت تذكار نياحة موسي النبي ، وكان رأي الأرشيدياكون بانوب عبده ( إعتماداً علي ما جاء بالؤلؤة صفحة ٥٨٤ ) أن يخصص يوم ٢٦ بؤونه للملاك غبريال وتُتْلي فيه فصول ٢٢ كيهك ، وبهذا لا يكون تذكار يشوع مكررا</span><span lang="NL"> .  </span></p>
+<p align="right"><span dir="RTL" lang="AR-SA">ويأتي تذكار اليوم في السنكسار، والدفنار نياحة القديس مقاريوس التاسع والستين من باباوات الإسكندرية ، ولم يأتِ فيهما نياحة يشوع بن نون أو القديس سمعان الحبيس</span></p>
+
+      {% endcreateArticleAccordions %}
+    </section>
+  {% endblock %}
+  

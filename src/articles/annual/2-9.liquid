@@ -1,0 +1,62 @@
+---
+layout: 'layouts/reading.html'
+title: 'اليوم التاسع من شهر بابه'
+permalink: annual/2-9.html
+---
+  {% block content %}
+    <section id="readings">
+      <ul>
+      {% if '19.132:9,10,17,18' != 'null' %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">العشية</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeVespers '19.132:9,10,17,18' '40.4:23-25*@+40.5:1-16' %}
+          </div>
+        </div>
+      </li>
+      {% endif %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">باكر</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeMatins '19.110:4-6' '42.6:17-23' '' %}
+          </div>
+        </div>
+      </li>
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <h3 class="flex items-center justify-between">
+            <span class="kufi">القداس</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </h3>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeLitugy '55.3:10-17*@+55.4:1-22' '60.5:1-14' '44.20:17-38' '19.73:23,24,28*@+19.9:14' '43.10:1-16' %}
+          </div>
+        </div>
+      </li>
+        </ul>
+    </section>
+    <section id="article">
+      <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
+      {% createArticleAccordions firstName, lastName %}
+        <p>قراءة هذا اليوم (شهادة القديس ليواريوس أسقف رومية) مُحوَّلة على قراءة يوم سابع عشر هاتور (تذكار نقل جسد القديس يوحنا ذهبي الفم إلى القسطنطينية).</p>
+<p>مكتوب خطأ في القطمارس شهادة وليس نياحة القديس ليواريوس.</p>
+<p>يذكر الدفنار نياحة أنبا ليواريوس بابا رومية وأنبا سمعان الأسقف، ويذكر السنكسار عن هذا اليوم نياحة القديس أومانيوس السابع من باباوات الكرازة المرقسية، وتذكار سمعان الأسقف.</p>
+
+      {% endcreateArticleAccordions %}
+    </section>
+  {% endblock %}
+  

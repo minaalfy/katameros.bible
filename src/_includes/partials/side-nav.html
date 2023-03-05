@@ -1,0 +1,268 @@
+<nav
+  id="sidebar-menu"
+  x-description="Mobile menu"
+  x-bind:aria-expanded="open"
+  :class="{ 'translate-x-0 md:translate-x-64': open, 'translate-x-64 md:translate-x-0': !(open) }"
+  class="fixed h-screen w-64 bg-white shadow-sm transition-all duration-500 ease-in-out"
+>
+  <div class="scrollbars h-full overflow-y-auto">
+    <!--logo-->
+    <div class="mh-18 py-5 text-center">
+      <a href="#" class="relative">
+        <h2 class="px-4 text-2xl font-semibold text-gray-200">
+          <img
+            width="512"
+            height="512"
+            src="https://katameros.bible/wp-content/uploads/2021/12/LOGO-RGB.png"
+            class="custom-logo"
+            alt="دراسات في القراءات اليومية للكنيسة القبطية الارثوذكسية"
+          />
+        </h2>
+      </a>
+    </div>
+    <form novalidate class="p-6">
+      <label for="gregorianDate" class="kufi mb-2 block"
+        >اختر يوما لعرض القراءة</label
+      >
+      <input
+        type="date"
+        lang="ar-SA"
+        id="gregorianDate"
+        class="w-full rounded-lg border border-orange-800 bg-inherit p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+        @change="getReadingsForDate($event)"
+      />
+    </form>
+
+    <!-- Sidebar menu -->
+    <ul
+      id="side-menu"
+      x-data="{selected:5}"
+      class="kufi float-none flex w-full flex-col pr-1.5"
+    >
+      <li>
+        <a class="flex items-center py-2 px-4 hover:text-rose-600" href="/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            width="16"
+            height="16"
+            class="ml-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"
+            />
+          </svg>
+          <span>الرئيسية</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="flex items-center py-2 px-4 hover:text-rose-600" href="/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="ml-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"
+            />
+            <path
+              d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"
+            />
+          </svg>
+          <span>تقديم نيافة الأنبا أرساني </span>
+        </a>
+      </li>
+      <li>
+        <a class="flex items-center py-2 px-4 hover:text-rose-600" href="/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="ml-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"
+            />
+            <path
+              d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"
+            />
+          </svg>
+          <span>تقديم القمص يسى ثابت </span>
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="flex items-center py-2 px-4 hover:text-rose-600"
+          @click="getReadingsForDate()"
+          href="javascript:;"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            class="ml-2"
+            viewBox="0 0 16 16"
+            width="16"
+            height="16"
+          >
+            <path
+              d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"
+            />
+            <path
+              d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"
+            />
+          </svg>
+          <span>قراءة اليوم</span>
+        </a>
+      </li>
+      <li>
+        <a class="flex items-center py-2 px-4 hover:text-rose-600" href="/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            class="ml-2"
+            viewBox="0 0 16 16"
+            width="16"
+            height="16"
+          >
+            <path
+              d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"
+            />
+            <path
+              d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"
+            />
+          </svg>
+          <span>معني ومغزى قراءات الكنيسة </span>
+        </a>
+      </li>
+
+      <li>
+        <a
+          :class="{ 'text-rose-600': selected == 4 }"
+          @click="selected !== 4 ? selected = 4 : selected = null"
+          class="flex items-center py-2 px-4 hover:text-rose-600"
+          href="javascript:;"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            class="ml-2"
+            viewBox="0 0 16 16"
+            width="16"
+            height="16"
+          >
+            <path
+              d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"
+            />
+            <path
+              d="M4.5 12.5A.5.5 0 0 1 5 12h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 10h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm1.639-3.708 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V8.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V8s1.54-1.274 1.639-1.208zM6.25 6a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z"
+            />
+          </svg>
+          <span>قراءات القطمارس</span>
+          <span class="mr-auto">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="mt-1.5 transform transition duration-300"
+              :class="{ 'rotate-0': selected == 4, 'rotate-90': !(selected == 4) }"
+              width="12"
+              height="12"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+              />
+            </svg>
+          </span>
+        </a>
+
+        <ul
+          x-show="selected == 4"
+          x-transition:enter="transition-all duration-200 ease-out"
+          x-transition:enter-start="transform opacity-0 scale-95"
+          x-transition:enter-end="transform opacity-100 scale-100"
+          class="amiri top-full z-50 mb-1 block rounded rounded-t-none py-0.5 pr-7 font-normal"
+        >
+          <li>
+            <a
+              class="clear-both block w-full whitespace-nowrap py-2 px-6 hover:text-rose-600"
+              href="قراءات-يونان.html"
+              >قراءات صوم يونان</a
+            >
+          </li>
+          <li>
+            <a
+              class="clear-both block w-full whitespace-nowrap py-2 px-6 hover:text-rose-600"
+              href="قراءات-الصوم-الكبير.html"
+              >قراءات الصوم الكبير</a
+            >
+          </li>
+          <li>
+            <a
+              class="clear-both block w-full whitespace-nowrap py-2 px-6 hover:text-rose-600"
+              href="قراءات-البصخة-المقدسة.html"
+              >قراءات البصخة المقدسة</a
+            >
+          </li>
+          <li>
+            <a
+              class="clear-both block w-full whitespace-nowrap py-2 px-6 hover:text-rose-600"
+              href="الخماسين-المقدسة.html"
+              >الخماسين المقدسة</a
+            >
+          </li>
+          <li>
+            <a
+              class="clear-both block w-full whitespace-nowrap py-2 px-6 hover:text-rose-600"
+              href="قراءات-الاحاد.html"
+              >قراءات الاحاد</a
+            >
+          </li>
+          <li>
+            <a
+              class="clear-both block w-full whitespace-nowrap py-2 px-6 hover:text-rose-600"
+              href="قراءات-الايام.html"
+              >قراءات-الايام</a
+            >
+          </li>
+          <!-- <li>
+            <a
+              class="clear-both block w-full whitespace-nowrap py-2 px-6 hover:text-rose-600"
+              href="قراءات-الاسرار.html"
+              >قراءات الاسرار</a
+            >
+          </li> -->
+        </ul>
+      </li>
+
+      <li>
+        <a
+          class="flex items-center py-2 px-4 hover:text-rose-600"
+          href="file-manager.html"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            class="ml-2"
+            viewBox="0 0 16 16"
+            width="16"
+            height="16"
+          >
+            <path
+              d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"
+            />
+          </svg>
+          <span>فعاليات العام</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

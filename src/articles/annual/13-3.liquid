@@ -1,0 +1,62 @@
+---
+layout: 'layouts/reading.html'
+title: 'اليوم الثالث من الشهر الصغير'
+permalink: annual/13-3.html
+---
+  {% block content %}
+    <section id="readings">
+      <ul>
+      {% if '19.34:7-8' != 'null' %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">العشية</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeVespers '19.34:7-8' '40.16:24-28' %}
+          </div>
+        </div>
+      </li>
+      {% endif %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">باكر</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeMatins '19.97:7-9' '40.18:10-20' '' %}
+          </div>
+        </div>
+      </li>
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <h3 class="flex items-center justify-between">
+            <span class="kufi">القداس</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </h3>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeLitugy '58.2:5-18' '60.1:3-12' '44.10:21-33' '19.138:1-2' '40.25:31-46' %}
+          </div>
+        </div>
+      </li>
+        </ul>
+    </section>
+    <section id="article">
+      <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
+      {% createArticleAccordions firstName, lastName %}
+        <p>تتماثل تقريباً قراءات هذا اليوم (تذكار الملاك روفائيل وشهادة القديس اندريانوس ونياحة البابا يوأنس الرابع عشر البطريرك ال ٩٦ ) مع قراءات ثاني وعشرين كيهك ( تذكار الملاك غبريال ) في المزامير وأناجيل عشيّة وباكر والبولس والكاثوليكون والإبركسيس بإستثناء إنجيل القدَّاس فقط</p>
+<p>وتتكلّم القراءتان (ثاني وعشرون كيهك وثالث النسئ) بصفة عامة عن خدمة الملائكة إلَّا أن إنجيل القدَّاس في القراءة الأولي ( تذكار الملاك غبريال ) يأتي من (لو ١ : ٢٦ &#8211; ٣٨ )والكلام هنا عن بشارة رئيس الملائكة غبريال لوالدة الإله بتجسّد الكلمة ومجئ الرب الأوَّل لخلاص البشر أما إنجيل القدَّاس في القراءة الثانية يأتي من (مت ٢٥ : ٣١ &#8211; ٤٦ )والكلام هنا عن مجئ الرب الثاني علي السحاب مع ملائكته القديسين للمكافأة والدينونة لذلك يأتي هذا التذكار في نهاية السنة القبطية</p>
+<p>ويُمْكِن الرجوع لشرح القراءات الخاصة بيوم ثاني وعشرين كيهك لتشابهها الكبير مع قراءات اليوم</p>
+
+      {% endcreateArticleAccordions %}
+    </section>
+  {% endblock %}
+  

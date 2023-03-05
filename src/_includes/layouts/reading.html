@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="leading-tight text-gray-900 antialiased" lang="ar" dir="rtl">
+  <head>
+    {% include "partials/site-head.html" %}
+  </head>
+  <body class="min-h-screen" data-env="{{ node.env }}">
+    <div x-data="{ open: false }" class="overflow-x-hidden">
+      {% include "partials/side-nav.html" %}
+      <div
+        x-bind:aria-expanded="open"
+        :class="{ 'mr-64 -ml-64 md:mr-0 md:ml-0': open, 'mx-0 md:mr-64': !(open) }"
+        class="mr-64 flex min-h-screen flex-col transition-all duration-500 ease-in-out"
+      >
+        <!-- Navbar -->
+        <nav
+          :class="{ 'right-64 -left-64 md:right-0 md:left-0': open, 'right-0 left-0 md:right-64': !(open) }"
+          class="fixed right-0 left-0 z-50 mt-0 flex flex-row flex-nowrap items-center bg-white py-2 px-6 shadow-sm transition-all duration-500 ease-in-out md:right-64"
+          id="desktop-menu"
+        >
+          <!-- sidenav button-->
+          <button
+            id="navbartoggle"
+            type="button"
+            class="inline-flex items-center justify-center text-white hover:text-gray-200 focus:outline-none focus:ring-0"
+            aria-controls="sidebar-menu"
+            @click="open = !open"
+            aria-expanded="false"
+            x-bind:aria-expanded="open.toString()"
+          >
+            <span class="sr-only">Mobile menu</span>
+            <svg
+              x-description="Icon open"
+              x-state:on="Menu open"
+              x-state:off="Menu closed"
+              class="hidden h-8 w-8"
+              :class="{ 'block': open, 'hidden': !(open) }"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                class="hidden md:block"
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+              />
+              <path
+                class="md:hidden"
+                d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"
+              />
+            </svg>
+
+            <svg
+              x-description="Icon closed"
+              x-state:on="Menu open"
+              x-state:off="Menu closed"
+              class="block h-8 w-8"
+              :class="{ 'hidden': open, 'block': !(open) }"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                class="md:hidden"
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+              />
+              <path
+                class="hidden md:block"
+                d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"
+              />
+            </svg>
+            <!-- <i class="text-2xl fas fa-bars"></i> -->
+          </button>
+          <h1 class="kufi mx-auto text-xl md:text-2xl">
+            دراسات في القراءات اليومية للكنيسة القبطية الارثوذكسية
+          </h1>
+          <!-- Search -->
+          <!-- <form class="hidden lg:inline-block mx-5">
+            <div class="flex flex-wrap items-stretch w-full relative">
+              <input type="text" class="flex-shrink flex-grow max-w-full leading-5 relative text-sm py-2 px-4 ltr:rounded-l rtl:rounded-r text-gray-800 bg-gray-100 overflow-x-auto focus:outline-none border border-gray-100 focus:border-gray-200 focus:ring-0" placeholder="Search…" aria-label="Search">
+              <div class="flex -mr-px">
+                <button class="flex items-center py-2 px-4 ltr:-ml-1 rtl:-mr-1 ltr:rounded-r rtl:rounded-l leading-5 text-gray-100 bg-indigo-500 border border-indigo-500 hover:text-white hover:bg-indigo-600 hover:ring-0 hover:border-indigo-600 focus:bg-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-0" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+              </div>
+            </div>
+          </form> -->
+        </nav>
+        <!-- End Navbar -->
+
+        <main class="mb-8 flex-grow px-4 pt-24">
+          <div class="relative mx-auto max-w-5xl p-4 md:p-6">
+            <div id="parchment"></div>
+            <div class="relative font-semibold text-[#7F3300]">
+              <h1
+                class="kufi text-shadow add-cross py-6 text-center text-2xl"
+                id="pageTitle"
+              >
+                {{page_title}}
+              </h1>
+              <h3
+                class="relative max-h-0 overflow-hidden text-center text-xl transition-all duration-300"
+                id="formattedDate"
+              ></h3>
+              <div id="content" class="mt-4">{{ content }}</div>
+            </div>
+          </div>
+          <svg class="absolute h-0">
+            <defs>
+              <filter id="wavy2">
+                <feTurbulence
+                  x="0"
+                  y="0"
+                  baseFrequency="0.02"
+                  numOctaves="5"
+                  seed="1"
+                />
+                <feDisplacementMap in="SourceGraphic" scale="20" />
+              </filter>
+            </defs>
+          </svg>
+        </main>
+        <!-- <footer class="p-6 shadow-sm">
+        <div class="mx-auto">
+          <div class="flex flex-wrap flex-row -mx-4">
+            <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 text-center md:ltr:text-left md:rtl:text-right">
+              <ul class="ltr:pl-0 rtl:pr-0">
+                <li class="inline-block ltr:mr-3 rtl:ml-3">
+                  <a class="hover:text-indigo-500" href="#">Support</a>
+                </li>
+                <li class="inline-block ltr:mr-3 rtl:ml-3">
+                  <a class="hover:text-indigo-500" href="#">Help Center</a>
+                </li>
+                <li class="inline-block ltr:mr-3 rtl:ml-3">
+                  <a class="hover:text-indigo-500" href="#">Privacy</a>
+                </li>
+                <li class="inline-block ltr:mr-3 rtl:ml-3">
+                  <a class="hover:text-indigo-500" href="#">Terms of Service</a>
+                </li>
+              </ul>
+            </div>
+            <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 text-center md:ltr:text-right md:rtl:text-left">
+              <p class="mb-0 mt-3 md:mt-0">
+                <a href="index.html" class="hover:text-indigo-500">Tailnet</a> | All right reserved
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer> -->
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

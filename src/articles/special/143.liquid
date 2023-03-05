@@ -1,0 +1,160 @@
+---
+layout: 'layouts/reading.html'
+title: 'قراءات اليوم الثالث لصوم يونان'
+permalink: special/143.html
+---
+  {% block content %}
+    <section id="readings">
+      <ul>
+      {% if 'null' != 'null' %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">العشية</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeVespers '' '' %}
+          </div>
+        </div>
+      </li>
+      {% endif %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">باكر</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeMatins '19.103:13,12' '40.11:25-30' '32.3:1-10*@+32.4:1-11' %}
+          </div>
+        </div>
+      </li>
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <h3 class="flex items-center justify-between">
+            <span class="kufi">القداس</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </h3>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeLitugy '49.2:1-23' '62.2:12-17' '44.15:12-20' '19.32:1,5' '40.15:32-39*@+40.16:1-4' %}
+          </div>
+        </div>
+      </li>
+        </ul>
+    </section>
+    <section id="article">
+      <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
+      {% createArticleAccordions firstName, lastName %}
+        <h3><strong>موضوع</strong> <strong>قراءات</strong> <strong>هذا</strong> <strong>اليوم </strong>هو تحنن الله الذي يقود ويشجع كل نفس على التوبة والثقة في مراحمه الغنية.</h3>
+<p><strong>تبدأ</strong> <strong>القراءات</strong> بدعوة الله مرة ثانية ليونان لأجل أهل نينوى وصدمة يونان من قبول الله لتوبتهم وإعترافه بأنه كان هذا سبب هروبه من البداية.</p>
+<p>&#8220;لأني علمت إنك إله رؤوف ورحيم كثير الرحمة ونادم على الشر&#8221;.</p>
+<p><strong>و</strong><strong>عتاب</strong> <strong>الله</strong> <strong>ليونان</strong> بإشفاقه على يقطينة بعمر يوم وعدم إشفاقه على شعب كامل.</p>
+<p>&#8220;فقال الرب لقد أشفقت أنت على اليقطينة التي لم تتعب فيها ولا ربيتها، أفلا أشفق أنا على نينوى المدينة العظيمة التي فيها أكثر من اثنتي عشرة ربوة من أناس لايعرفون يمينهم من شمالهم ماعدا بهائم كثيرة&#8221;.</p>
+<p><strong>كما</strong> <strong>يظهر</strong> <strong>مزمور</strong> <strong>باكر</strong> غنى رأفات الله كأب مع أولاده وغنى غفرانه وإتساعه.</p>
+<p>&#8220;كما يتراءف الأب على بنيه كذلك تراءف الرب على خائفيه وكبعد المشارق من المغارب أبعد عنا آثامنا&#8221;.</p>
+<p><strong>ومزمور</strong> <strong>القداس</strong> يقودنا للمدخل إلى الغفران الإلهي وهو الإعتراف بالخطية.</p>
+<p>&#8220;قلت أعترف أمام الرب باثمي وأنت صفحت لي عن نفقات قلبي&#8221;.</p>
+<p><strong>ويبشر</strong> <strong>إنجيل</strong> <strong>باكر</strong> أطفال العهد الجديد بالراحة الإلهية المنسكبة مجاناً على كل المتعبين من الخطية والثقيلي الأحمال من آثارها، وهذه الراحة هى موضوع مسرة الله.</p>
+<p>&#8220;أشكرك أيها الآب رب السماء والأرض لأنك أخفيت هذه عن الحكماء والفهماء وأعلنتها للأطفال، نعم أيها الآب لأنه هكذا صارت المسرة أمامك، تعالوا إلي ياجميع المتعبين والمثقلين بأحمالهم وأنا أريحكم&#8221;.</p>
+<p><strong>أما</strong> <strong>البولس</strong> فيظهر فيه القديس بولس مدي وعمق غني مراحم الله في الحياة المعطاة لمن كانوا مائتين بالروح.</p>
+<p>&#8220;وكنا بالطبيعة أبناء الغضب كالباقين أيضاً فالله الغني بالرحمة من أجل عظم محبته التي أحبنا بها، ليظهر في الدهور الآتية فرط غنى نعمته باللطف علينا في المسيح يسوع، وليس فقط حياة مجانية معطاة بل شركاء مع القديسيين وأهل بيت الله فلستم إذن بعد غرباء ولانزلاء بل أنتم شركاء مع القديسين وأهل بيت الله&#8221;.</p>
+<p><strong>بينما</strong> <strong>يعلن</strong> <strong>الكاثوليكون</strong> أعظم ثلاث عطايا للبشر من غني رأفات الله وهى الغفران والنصرة على الشيطان ومعرفة الله.</p>
+<p>&#8220;أكتب إليكم أيها الأبناء لأن خطاياكم قد غُفرت لكم لأجل اسمه، أكتب إليكم أيها الفتيان لأنكم قد غلبتم الشرير كتبت إليكم أيها الأولاد لأنكم قد عرفتم الآب&#8221;.</p>
+<p><strong>أما</strong> <strong>الإبركسيس</strong> يحدثنا عن الإفتقاد الإلهي للأمم في ملء الزمان.</p>
+<p>&#8220;قد تكلم سمعان كيف افتقد الله الأمم أولاً ليتخذ منهم شعباً لإسمه، حتى تطلب الرب بقية الناس وجميع الأمم الذين دُعي إسمي عليهم يقول الرب الصانع هذا&#8221;.</p>
+<p><strong>ويختم</strong> <strong>إنجيل</strong> <strong>القداس</strong> بالإشفاق الإلهي على الجموع المتعبة في المكان القفر كمثال لإشفاقه على بشريتنا الضعيفة في قفر هذا العالم.</p>
+<p>&#8220;ودعا يسوع تلاميذه وقال لهم إني أشفق على هذا الجمع لان لهم ثلاثة أيام يمكثون ها هنا معي وليس لهم مايأكلون ولست أريد أن أصرفهم صائمين لئلا يخوروا في الطريق&#8221;.</p>
+<p></p>
+<h4><strong>ملخّص القراءات</strong/></p>
+<h4>
+<table width="491">
+<tbody>
+<tr>
+<td width="102">يونان٣، ٤</td>
+<td width="389">دعوة الله الثانية ليونان والتوبة العظيمة لشعب نينوى.</td>
+</tr>
+<tr>
+<td width="102">مزمور باكر</td>
+<td width="389">غنى رأفات الله وغنى غفرانه.</td>
+</tr>
+<tr>
+<td width="102">إنجيل باكر</td>
+<td width="389">الراحة الإلهية المُعْطاة مجاناً لكل المتعبين من الخطيّة.</td>
+</tr>
+<tr>
+<td width="102">البولس</td>
+<td width="389">غني مراحم الله للأمم الغريبة التي كانت مائتة بالروح.</td>
+</tr>
+<tr>
+<td width="102">الكاثوليكون</td>
+<td width="389">أعظم ثلاث عطايا إلهية للإنسان الغفران والنصرة على الشيطان ومعرفة الله.</td>
+</tr>
+<tr>
+<td width="102">الإبركسيس</td>
+<td width="389">إفتقاد الله للأمم في ملء الزمان.</td>
+</tr>
+<tr>
+<td width="102">مزمور القدّاس</td>
+<td width="389">الإعتراف بالخطيّة هو المدخل للغفران الإلهي.</td>
+</tr>
+<tr>
+<td width="102">إنجيل القدّاس</td>
+<td width="389">الإشفاق الإلهي على البشريّة الضعيفة في بريّة وقفر هذا العالم</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<h4><strong>الكنيسة في قراءات اليوم</strong/></p>
+<h4>
+<table width="499">
+<tbody>
+<tr>
+<td width="125">يونان</td>
+<td width="374">المفهوم الحقيقي للتوبة في تغيير الحياة.</td>
+</tr>
+<tr>
+<td width="125">إنجيل باكر</td>
+<td width="374">الابن واحد مع الآب في الجوهر.</td>
+</tr>
+<tr>
+<td width="125">البولس</td>
+<td width="374">الأعمال الصالحة عطيّة إلهية لمن يحيا في المسيح له المجد</td>
+</tr>
+<tr>
+<td width="125">البولس والإبركسيس</td>
+<td width="374">وحدة كنيسة العهد القديم والجديد واليهود والأمم.</td>
+</tr>
+<tr>
+<td width="125">الكاثوليكون</td>
+<td width="374">الجهاد الروحي ضد محبّة العالم.</td>
+</tr>
+</tbody>
+</table>
+<p><strong> </strong></p>
+<h4><strong>من وحي القراءات</strong/></p>
+<h4>
+<strong>العتاب مع الله</strong></p>
+<p>&#8220;أليس هذا كلامي إذ كنت بعد في أرضي؟&#8221; (يون ٤: ٢)</p>
+<ul>
+<li>هل يمكن أن نري أمور حياتنا أفضل من الله ؟!.</li>
+<li>هل كلامنا أصدق ؟!.</li>
+<li>هل منطقنا أوقع ؟!.</li>
+<li>هل يجب أن ينفذ ما نراه ؟!.</li>
+<li>علامات الإستفهام معه أفضل من إجابات العالم.</li>
+<li>وصمته أعمق من فلسفات البشر.</li>
+<li>ومن يحيا معه يفهم.</li>
+<li>ومن يحاول أن يفهم دون العشرة معه يتعثّر.</li>
+</ul>
+<p>فلنجلس عند قدميه لنترجي سلامه وحضوره في حيرتنا وعجزنا.</p>
+
+      {% endcreateArticleAccordions %}
+    </section>
+  {% endblock %}
+  

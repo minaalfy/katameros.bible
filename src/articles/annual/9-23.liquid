@@ -1,0 +1,62 @@
+---
+layout: 'layouts/reading.html'
+title: 'اليوم الثالث والعشرون من شهر بشنس'
+permalink: annual/9-23.html
+---
+  {% block content %}
+    <section id="readings">
+      <ul>
+      {% if '19.40:9,2' != 'null' %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">العشية</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeVespers '19.40:9,2' '41.6:6-13' %}
+          </div>
+        </div>
+      </li>
+      {% endif %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">باكر</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeMatins '19.105:1-3' '41.10:17-30' '' %}
+          </div>
+        </div>
+      </li>
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <h3 class="flex items-center justify-between">
+            <span class="kufi">القداس</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </h3>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeLitugy '55.3:10-17*@+55.4:1-18' '60.5:1-14' '44.15:36-41*@+44.16:1-5' '19.96:1-2' '41.1:1-11' %}
+          </div>
+        </div>
+      </li>
+        </ul>
+    </section>
+    <section id="article">
+      <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
+      {% createArticleAccordions firstName, lastName %}
+        <p>قراءة هذا اليوم ( شهادة يونيوس الرسول &#8211; أو يوليوس كما جاء في الدفنار ويونياس كما جاء في السنكسار &#8211; أحد السبعين ) مُحوَّلة علي قراءة يوم ثلاثين برمودة ( شهادة مار مرقس الرسول الإنجيلي )</p>
+<p>ويضيف الدفنار والسنكسار أيضاً شهادة القديس يوليانوس وأمه بالاسكندرية</p>
+<p>ونلاحظ هنا أن كثيراً من تذكارات السبعين رسولاً مُحوَّلة علي قراءات يوم أوَّل طوبة الخاص بالقديس إستفانوس رئيس الشمامسة إلَّا أن البعض منهم مُحوَّلة قراءاته علي قراءات ثلاثين برمودة</p>
+
+      {% endcreateArticleAccordions %}
+    </section>
+  {% endblock %}
+  

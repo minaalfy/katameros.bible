@@ -1,0 +1,166 @@
+---
+layout: 'layouts/reading.html'
+title: 'قراءات اليوم الأول لصوم يونان'
+permalink: special/141.html
+---
+  {% block content %}
+    <section id="readings">
+      <ul>
+      {% if '19.95:1-2' != 'null' %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">العشية</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeVespers '19.95:1-2' '42.13:1-5' %}
+          </div>
+        </div>
+      </li>
+      {% endif %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">باكر</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeMatins '19.103:1,8' '40.7:6-12' '32.1:1-17' %}
+          </div>
+        </div>
+      </li>
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <h3 class="flex items-center justify-between">
+            <span class="kufi">القداس</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </h3>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeLitugy '45.6:17-23' '65.1:1-13' '44.2:38-47' '19.130:3-4' '40.12:35-45' %}
+          </div>
+        </div>
+      </li>
+        </ul>
+    </section>
+    <section id="article">
+      <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
+      {% createArticleAccordions firstName, lastName %}
+        <h3>تعلن قراءات هذا اليوم أن التوبة هى باب نجاتنا وخلاصنا.</h3>
+<p><strong>لذا</strong> <strong>تطمئنا</strong> <strong>المزامير</strong> من أن إلهنا عنده خلاصنا (عشية)، وعنده غنى المراحم (باكر)، وعنده الإغتفار أو المغفرة (القداس).</p>
+<p><strong>فتدعو</strong> <strong>المزامير</strong> <strong>كل</strong> <strong>تائب</strong> للإعتراف لإله الخلاص.</p>
+<p>&#8220;ولنهلل لله مخلصنا نبادر فنبلغ إلي وجهه بالإعتراف&#8221; (مزمور عشية)، وأن يبارك إله الرحمة والرأفة &#8220;باركي يا نفسي الرب، رؤوف ورحوم هو الرب&#8221; (مزمور باكر)، وأن نتوكل على إله المغفرة &#8220;لأن من عندك هو الإغتفار توكلت نفسي على الرب&#8221; (مزمور القداس).</p>
+<p><strong>ويعلن</strong> <strong>الرب</strong> <strong>في</strong> <strong>إنجيل</strong> <strong>عشية</strong> بمنتهى الوضوح والقوة أهمية التوبة بدلاً من فلسفات البحث في الأمور وتحليل أسباب مصائب الناس وأن يراجع كل إنسان توبته.</p>
+<p>&#8220;فأجاب يسوع وقال لهم أتظنون أن هؤلاء الجليلين كانوا خطاة أكثر من كل الجليليين إذ أصابتهم هذه الآلام كلا بل أقول لكم إن لم تتوبوا فجميعكم كذلك تهلكون&#8221;.</p>
+<p><strong>أما</strong> <strong>في</strong> <strong>سفر</strong> <strong>يونان</strong> يدعو الرب النبي لكرازة الأمم، ودعوتهم للتوبة للنجاة من الهلاك، وكيف يحاول يونان الهروب ويقدم له الله هو أيضا فرصة للتوبة.</p>
+<p>&#8220;وصارت كلمة الرب إلى يونان بن أمتاي قائلاً قم انطلق إلى نينوى المدينة العظيمة وناد عليها لأن صراخ شرها قد صعد إلىّ، فقام يونان ليهرب إلى ترشيش من وجه الرب&#8230; فقال لهم يونان خذوني والقوني إلى البحر فيسكن البحر عنكم لأنني عالم أن هذا الموج العظيم إنما هاج عليكم بسببي&#8230;. فأمر الرب حوتاً عظيماً لإبتلاع يونان&#8221;.</p>
+<p><strong>ويحذرنا</strong> <strong>إنجيل</strong> <strong>باكر</strong> من الإستهانة بمقدسات الله فينا ودرره الإلهية وطرحها لتتدنس من خنازير العالم . &#8220;لا تعطوا القدس للكلاب، ولا تطرحوا درركم قدام الخنازير&#8221;.</p>
+<p><strong>لكنه</strong> <strong>في</strong> <strong>ذات</strong> <strong>الوقت</strong> يشجعنا لنطلب عطاياه الغنية.</p>
+<p>&#8220;سلوا فتعطوا أطلبوا فتجدوا إقرعوا فيُفتَح لكم، فإن كنتم وأنتم أشرار تعرفون أن تعطوا أولادكم العطايا الصالحة فكم بالحري أبوكم الذي في السموات يهب خيرات للذين يسألونه&#8221;.</p>
+<p><strong>ويعطينا</strong> <strong>البولس</strong> نموذج واضح لجمال التوبة وثمرها وأثرها في أهل رومية.</p>
+<p>&#8220;فشكرا لله أنكم قد كنتم عبيدا للخطيئة فسمعتم وأطعتم من قلوبكم رسم التعليم الذي تسلمتموه، وأما الآن وقد تحررتم من الخطيئة واستعبدتم لله فلكم ثمركم للقداسة والعاقبة هى الحياة الأبدية لأن أجرة الخطيئة هى موت وأما عطية الله فهى حياة أبدية بالمسيح يسوع ربنا&#8221;.</p>
+<p><strong>كما</strong> <strong>يطمئن</strong> <strong>الكاثوليكون</strong> <strong>التائبين</strong> بأن دعوتهم محفوظة بمحبة إلهية، لكن هى تحتاج جهاد وإجتهاد دائم من الخادم والمخدوم من الراعي والرعية.</p>
+<p>&#8220;يهوذا عبد يسوع المسيح أخو يعقوب إلى المحبوبين في الله الآب المحفوظين المدعوين ليسوع المسيح، يا أحبائي إني إذ كنت باذلاً كل الجهد في أن أكتب إليكم لأجل خلاصكم المشترك، اضطررت أن أكتب إليكم متضرعا أن تجتهدوا لأجل الإيمان الذي سلمه لكم مرة القديسون&#8221;.</p>
+<p><strong>لكنه</strong> <strong>في</strong> <strong>نفس</strong> <strong>الوقت</strong> يعلن مصير غير التائبين.</p>
+<p>&#8220;موثقين بقيود أبدية إلى دينونة ذلك اليوم العظيم مثل سدوم وعمورة وماحولها من المدن التي انهمكت في الزنا على مثالهما وذهبت وراء جسد غريب جعلت عبرة ونالها نقمة نار أبدية&#8221;.</p>
+<p><strong>لذلك</strong> <strong>يدعو</strong> <strong>القديس</strong> <strong>بطرس</strong> الجموع في الابركسيس للتوبة والمعمودية لنوال الخلاص وعطية الروح.</p>
+<p>&#8220;فقال لهم بطرس توبوا وليعتمد كل واحد منكم باسم يسوع المسيح لمغفرة خطاياكم فتنالوا موهبة الروح القدس&#8221;.</p>
+<p><strong>كما</strong> <strong>يعلن</strong> <strong>أن</strong> <strong>رسالة</strong> <strong>الكنيسة</strong> <strong>اليومية</strong> هى دعوة وقبول التائبين وغير المؤمنين لداخل الحظيرة. &#8220;وكان الرب كل يوم يضم الذين يخلصون إلي البيعة&#8221;.</p>
+<p><strong>ويختم</strong> <strong>إنجيل</strong> <strong>القداس</strong> بدعوة الكل لتطهير المنبع الذي هو القلب من أي شر وحرص التائب على كل كلمة تخرج من فمه.</p>
+<p>&#8220;الانسان الصالح من كنزه الصالح يخرج الصلاح، والانسان الشرير من كنزه الشرير يخرج الشر، أقول لكم إن كل كلمة بطالة يقولها الناس سوف يعطون عنها جوابا في يوم الدين&#8221;.</p>
+<p><strong>كما</strong> <strong>يحذر</strong> <strong>من</strong> <strong>فراغ</strong> <strong>القلب</strong> من روح التوبة ومن النعمة فيصير مسرحاً لقوات الظلمة.</p>
+<p>&#8220;إن الروح النجس إذا خرج من الانسان طاف في أماكن لا ماء فيها يطلب راحة فلا يجد، حينئذ يقول أرجع إلى بيتي الذي خرجت منه فيأتي فيجده فارغاً مكنوساً مزيناً فيذهب حينئذ ويأخذ معه سبعة أرواح أخر أشر منه فيأتون ويسكنون هناك فتكون أواخر ذلك الانسان أشر من أوائله&#8221;.</p>
+<h4><strong>ملخّص القراءات</strong/></p>
+<h4>
+<table style="height: 367px;" width="753">
+<tbody>
+<tr>
+<td width="94">مزمور عشيّة</p>
+<p>وباكر والقدّاس</td>
+<td width="412">نعترف لإله الخلاص ونبارك إله الرحمة ونتوكّل على إله المغفرة.</td>
+</tr>
+<tr>
+<td width="94">إنجيل عشيّة</td>
+<td width="412">خطورة تحليل أسباب مصائب الآخرين وإهمال التوبة.</td>
+</tr>
+<tr>
+<td width="94">يونان ١</td>
+<td width="412">دعوة الله ليونان ليذهب إلي نينوى.</td>
+</tr>
+<tr>
+<td width="94">إنجيل باكر</td>
+<td width="412">غني الله في عطاياه لكن خطورة الإستهانة بالمقدّسات الإلهية.</td>
+</tr>
+<tr>
+<td width="94">البولس</td>
+<td width="412">أثمار التوبة وفاعليتها في النفوس.</td>
+</tr>
+<tr>
+<td width="94">الكاثوليكون</td>
+<td width="412">جهاد التوبة ومصير الشعوب غير التائبة.</td>
+</tr>
+<tr>
+<td width="94">الإبركسيس</td>
+<td width="412">التوبة والمعمودية وموهبة الروح القدس.</td>
+</tr>
+<tr>
+<td width="94">إنجيل القدّاس</td>
+<td width="412">التوبة هى طهارة المنبع (القلب) وخطورة فراغ القلب من النعمة.</td>
+</tr>
+</tbody>
+</table>
+<h3></h3>
+<h4><strong>الكنيسة في قراءات اليوم</strong/></p>
+<h4>
+<table width="506">
+<tbody>
+<tr>
+<td width="98">الكاثوليكون</td>
+<td width="408">الجهاد في الإيمان وفي حياة الخلاص</td>
+</tr>
+<tr>
+<td width="98">الكاثوليكون</td>
+<td width="408">دينونة الملائكة الساقطين ودينونة كل البشر</td>
+</tr>
+<tr>
+<td width="98">الكاثوليكون</td>
+<td width="408">التقليد &#8211; ميخائيل رئيس الملائكة لما خاصم إبليس &#8230;</td>
+</tr>
+<tr>
+<td width="98">الإبركسيس</td>
+<td width="408">إرتباط التوبة بالمعمودية بفعل الروح القدس</td>
+</tr>
+<tr>
+<td width="98">الإبركسيس</td>
+<td width="408">شركة كسر الخبز &#8211; الإفخارستيا</td>
+</tr>
+<tr>
+<td width="98">إنجيل القدّاس</td>
+<td width="408">يونان في بطن الحوت رمزاً لموت الرب وقيامته</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<h4><strong>من وحي القراءات</strong/></p>
+<h4>
+<img loading="lazy" class=" wp-image-824 aligncenter" src="https://katameros.bible/wp-content/uploads/2022/01/jonah1-169x300.jpg" alt="" width="236" height="419" srcset="https://katameros.bible/wp-content/uploads/2022/01/jonah1-169x300.jpg 169w, https://katameros.bible/wp-content/uploads/2022/01/jonah1.jpg 236w" sizes="(max-width: 236px) 100vw, 236px" /></p>
+<p><strong>الهروب من الله</strong></p>
+<p><strong>&#8220;فقام يونان ليهرب إلى ترشيش من وجه الرب&#8221; </strong>(يون ١: ٣)</p>
+<ul>
+<li>نحن نهرب كثيراً من وجه الرب عندما لا نكرس وقتا للجلوس معه.</li>
+<li>نحن نهرب عندما نؤجل خلوتنا معه.</li>
+<li>نحن نهرب عندما نسدّ آذاننا عن نداء من حولنا.</li>
+<li>نحن نهرب .. نفهم الحوت والريح أنهما عقاب لا داعي له، بينما هي يديه المُحِبَّة تحاول انتشالنا من الضياع، ندفع أجرة هروبنا برضى، ونمشي مع الغرباء في لا مبالاة، وننزل إلي أسفل دون أن ندري.</li>
+</ul>
+<p><strong>اننا نهرب من محبته ومن وصيته ومن دعوته</strong><strong> !!</strong></p>
+
+      {% endcreateArticleAccordions %}
+    </section>
+  {% endblock %}
+  

@@ -1,0 +1,28 @@
+const EFeast = {
+  NONE: -1,
+  Christmas: 1,
+  Ascension: 2,
+  LazarusSaturday: 3,
+  PalmSunday: 4,
+  PaschaMonday: 5,
+  PaschaTuesday: 6,
+  PaschaWednesday: 7,
+  PaschaThursday: 8,
+  PaschaFriday: 9,
+  TempleEntrance: 10,
+  EgyptEntrance: 11,
+  Annunciation: 12,
+  Cross: 13,
+  FastOfNinevah: 14,
+  Jonas: 15,
+  NativityParamoun: 16,
+  TheophanyParamoun: 17,
+  Theophany: 18,
+  WeddingOfCana: 19,
+  GreatLentPreparationSaturday: 20,
+  GreatLentPreparationSunday: 21,
+  Easter: 22,
+  Nayrouz: 23,
+};
+
+module.exports = { EFeast };

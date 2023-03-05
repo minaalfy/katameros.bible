@@ -1,0 +1,62 @@
+---
+layout: 'layouts/reading.html'
+title: 'اليوم الأوَّل من الشهر الصغير'
+permalink: annual/13-1.html
+---
+  {% block content %}
+    <section id="readings">
+      <ul>
+      {% if '19.65:4-5' != 'null' %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">العشية</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeVespers '19.65:4-5' '40.10:34-42' %}
+          </div>
+        </div>
+      </li>
+      {% endif %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">باكر</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeMatins '19.37:17-18' '43.1:1-17' '' %}
+          </div>
+        </div>
+      </li>
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <h3 class="flex items-center justify-between">
+            <span class="kufi">القداس</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </h3>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeLitugy '45.10:4-18' '62.1:1-10*@+62.2:1-6' '44.3:1-16' '19.37:30-31' '43.21:15-25' %}
+          </div>
+        </div>
+      </li>
+        </ul>
+    </section>
+    <section id="article">
+      <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
+      {% createArticleAccordions firstName, lastName %}
+        <p>قراءات هذا اليوم (شهادة أبو يحنس تلميذ يوحنا الإنجيلي وشهادة القديس بشاي الأنطاكي شقيق القديس باهور ) تتشابه إلي حد كبير مع قراءات رابع طوبة ( نياحة القديس يوحنا إبن زبدي الإنجيلي ) في البولس والكاثوليكون والإبركسيس وإنجيل القدَّاس بإختلاف المزامير وإنجيل عشيّة فقط لذلك يُمْكِن الرجوع لشرح قراءات رابع طوبة</p>
+<p>وتتشابه القراءتان في كلامهما مُباشرة عن يوحنا الإنجيلي (لذلك تأتي أيضاً في تذكار تلميذه أفتيخوس ) كما في الإبركسيس وإنجيل القدَّاس وأيضاً مجئ قراءات من إنجيل ورسائل القديس يوحنا كما في مزمور باكر والكاثوليكون</p>
+<p>يذكر الدفنار والسنكسار إسم أفتيخوس تلميذ يوحنا الإنجيلي بدلاً من أبو يحنس</p>
+
+      {% endcreateArticleAccordions %}
+    </section>
+  {% endblock %}
+  

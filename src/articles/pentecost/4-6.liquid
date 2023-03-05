@@ -1,0 +1,105 @@
+---
+layout: 'layouts/reading.html'
+title: 'السبت من الأسبوع الرابع للخمسين يوم المُقَدَّسَة'
+permalink: pentecost/4-6.html
+---
+  {% block content %}
+    <section id="readings">
+      <ul>
+      {% if '19.129:1-2' != 'null' %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">العشية</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeVespers '19.129:1-2' '42.11:17-23' %}
+          </div>
+        </div>
+      </li>
+      {% endif %}
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">باكر</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </div>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeMatins '19.146:10-10' '43.7:31-36' '' %}
+          </div>
+        </div>
+      </li>
+      <li class="mb-2" x-data="{selected:false}">
+        <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+          <h3 class="flex items-center justify-between">
+            <span class="kufi">القداس</span>
+            <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+          </h3>
+        </button>
+        <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+          {% makeLitugy '49.1:1-14' '62.4:15-5:1' '44.9:36-43' '19.15:4-4' '43.7:14-24' %}
+          </div>
+        </div>
+      </li>
+        </ul>
+    </section>
+    <section id="article">
+      <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
+      {% createArticleAccordions firstName, lastName %}
+        <h3>غنى ومجد معرفة ابن الله</h3>
+<p>تتكلّم قراءات اليوم عن <strong>غنى ومجد معرفة إبن الله في ملء الزمان</strong>.</p>
+<p></p>
+<h4>المزامير</h4>
+<ul>
+<li>لذلك يعلن <strong>مزمور عشية</strong> عن ← <strong>سلطان أولاد الله وقوتهم وعدم قدرة الشياطين عليهم رغم كثرة حروبهم وقتالهم</strong> &#8220;مراراً كثيرة حاربوني منذ صباي&#8230;. قاتلوني منذ شبابي وأنهم لم يقدروا علي&#8221; (مز128: 1، 2).</li>
+<li><strong>وفي مزمور باكر</strong> عن <strong>← هذه العطايا </strong>«<strong>مُلْك الرب على الكنيسة وعلى البشرية ونصرتها الدائمة على حروب قوات الظلمة</strong>»<strong> هي مجد البشرية في العهد الجديد</strong> &#8220;&#8230;. ويمجد الذين يتقون الرب&#8221; (مز14: 5).</li>
+<li>وفي<strong> مزمور القداس </strong>عن أن <strong>←</strong> <strong>يوما بعد يوم خلاص الله وتستعلن لها قدرته الإلهية</strong> &#8220;يكلل الرب جميع سؤالاتك الآن علمت أن الرب قد خلص مسيحه يستجيب له من سماء قدسه باقتدارات خلاص يمينه&#8221; (مز19: 7).</li>
+</ul>
+<p></p>
+<h4>الأنجيل</h4>
+<ul>
+<li>وفي <strong>إنجيل عشية</strong> عن ← <strong>ملكوت العهد الجديد الذي أعطى فيه الآب للبشرية مجده في ابنه يسوع </strong>الذي دحض القوي الذي هو الشيطان وسحقه بالصليب كما أعطى الآب للبشرية في المسيح في النصرة الكاملة على قوات الظلمة &#8220;وإن كنت أنا ببعلزبول أخرج الشياطين فأبناؤكم بمن أخرجوهم &#8230;. وإن كنت أنا بإصبع الله أخرج الشياطين فإذن قد بلغت اليكم ملكوت الله&#8221;.</li>
+<li>وفي <strong>انجيل باكر </strong>عن أن ← <strong>مجد تعليم إبن الله معنا زماناً يسيراً كما يعلن حرمان غير المؤمنين من هذا المجد </strong>&#8220;فقال يسوع أنا معكم زماناً يسيراً&#8230;.. وستطلبونني فلا تجدوني&#8221;.</li>
+</ul>
+<p></p>
+<h4>البولس</h4>
+<p>وفي البولس عن ← <strong>مجد الثالوث المعلن في حياة أولاد الله </strong>&#8220;نحن الذين سبقنا فرجونا بالمسيح موصفاً لبهاء مجده الذي به سمعتم أنتم أيضاً كلام الحق الذي هو بشرى خلاصكم الذي فيه أيضاً إذا آمنتم وختمتم بروح القدس الموعود به الذي هو عربون ميراثنا لخلاص الذين هم مقتنون لمدح مجده&#8221;.</p>
+<p>وتتكرَّر كلمة مجد وبهاء وغنى نعمته خمس مرَّات في البولس.</p>
+<p></p>
+<h4>الكاثوليكون</h4>
+<p>وفي الكاثوليكون عن ← <strong>هدف إستعلان إبن الله وعمله في المؤمنين به</strong> &#8220;فأما الذي يعمل الخطية فإنه من الشيطان لأن الشيطان من البدء يخطئ. لذلك أستعلن يسوع إبن الله لينقض أعمال الشيطان &#8230;. كل من يثبت فيه لا يخطئ.. فبهذا يتبين أبناء الله من أبناء الشيطان&#8221;.</p>
+<p></p>
+<h4>الابركسيس</h4>
+<p>وفي الابركسيس عن ← <strong>مجد الله في الكنيسة الذي يعطي القيامة والحياة للموتى خلال قوة الصلاة </strong>&#8220;فأخرج بطرس الجميع وجثا على ركبتيه وصلي ثم التفت إلى الجسد وقال: يا طبيثا قومي ففتحت عينيها ولما نظرت بطرس جلست فأعطاها يده وأقامها&#8221;.</p>
+<p></p>
+<h4>إنجيل القداس</h4>
+<ul>
+<li>وفي إنجيل القداس عن ← <strong>مجد الآب المعلن في تجسُّد إبن الله والتي تهدف إلى خلاص الانسان وشفاؤه </strong>&#8220;أجابهم يسوع وقال: تعليمي أنا ليس هو لي بل للذي أرسلني&#8230;. من يتكلم من نفسه يطلب مجد نفسه أما من يطلب مجد الذي أرسله فهو صادق وليس فيه ظلم&#8230;&#8230;. فإن كان الإنسان يقبل الختان في السبت لئلا ينقض ناموس موسي فلما تسخطون علي لأني أبرأت إنساناً كله في السبت&#8221;.</li>
+</ul>
+<p></p>
+<h3>ملخص الشرح</h3>
+<ul>
+<li>مُلك الرب على الكنيسة ونصرتها الدائمة على قوات الظلمة ومجد البشرية في العهد الجديد. (مزمور عشية، وباكر، والقداس).</li>
+<li>الآب أعطى البشرية النصرة على الشيطان بإبنه يسوع الذي غلب القوي بصليبه. (انجيل عشيّة).</li>
+<li>غنى مجد ونعمة إبن الله كائن زماناً يسيراً (حياتنا الأرضية) وخطورة عدم الايمان الذي يؤدي إلى الحرمان من حضوره الإلهي. (انجيل باكر).</li>
+<li>بشرى خلاص الإبن تعلن عن مجد الآب للبشرية وتُمنح للمؤمنين بالروح القدس.(البولس).</li>
+<li>المحبة الإلهية هي الأيقونة السماوية التي تعلن عن إقتناء الكنيسة لمجد الله. (الكاثوليكون).</li>
+<li>مجد الله في الكنيسة يعطي القيامة والحياة للموتى بقوة الصلاة والايمان. (الإبركسيس).</li>
+</ul>
+<p>❈ مجد الآب المعلن في تجسُّد إبنه يهدف إلى شفاء الانسان وخلاصه. (انجيل القدَّاس).</p>
+<p></p>
+<h3>عظات آبائية و عظات آباء وخدّام معاصرين</h3>
+<p>يمكن الرجوع</p>
+<p>لعظات<a href="https://katameros.bible/church-reading/%d9%8a%d9%88%d9%85-%d8%a7%d9%84%d8%a3%d8%b1%d8%a8%d8%b9%d8%a7%d8%a1-%d9%85%d9%86-%d8%a7%d9%84%d8%a3%d8%b3%d8%a8%d9%88%d8%b9-%d8%a7%d9%84%d8%b1%d8%a7%d8%a8%d8%b9-%d9%84%d9%84%d8%ae%d9%85%d8%a7%d8%b3/?preview_id=1173&amp;preview_nonce=2c943bdb71&amp;preview=true#%D8%B9%D8%B8%D8%A7%D8%AA_%D8%A2%D8%A8%D8%A7%D8%A6%D9%8A%D8%A9_%D9%84%D9%84%D8%A3%D8%B1%D8%A8%D8%B9%D8%A7%D8%A1_%D9%85%D9%86_%D8%A7%D9%84%D8%A3%D8%B3%D8%A8%D9%88%D8%B9_%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9_%D9%85%D9%86_%D8%A7%D9%84%D8%AE%D9%85%D8%B3%D9%8A%D9%86_%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D9%85%D9%82%D8%AF%D8%B3%D8%A9"> يوم الأربعاء من الأسبوع الرابع</a></p>
+<p>لتكرار انجيل القداس</p>
+
+      {% endcreateArticleAccordions %}
+    </section>
+  {% endblock %}
+  

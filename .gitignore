@@ -5,6 +5,8 @@ node_modules
 _site
 dist
 
+katameros-preparation/articles
+
 # secrets
 .env
 

@@ -1,7 +1,13 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  content: ['./src/**/*.html', './src/**/*.md'],
+  content: [
+    './src/**/*.html',
+    './src/**/*.md',
+    './src/**/*.liquid',
+    './node_modules/flowbite/**/*.js',
+    './katameros-preparation/utils/article-helpers.js',
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -10,5 +16,5 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography'), require('flowbite/plugin')],
 };

@@ -1,4 +1,13 @@
+const fs = require('fs');
 const EleventyVitePlugin = require('@11ty/eleventy-plugin-vite');
+const {
+  makeVespers,
+  makeMatins,
+  makeLitugy,
+} = require('./katameros-preparation/utils/readings-repository.js');
+const {
+  createArticleAccordions,
+} = require('./katameros-preparation/utils/article-helpers');
 
 module.exports = function (config) {
   config.setLiquidOptions({
@@ -11,7 +20,29 @@ module.exports = function (config) {
   config.addPassthroughCopy('./src/images');
   config.addPassthroughCopy('./src/public');
   config.addPassthroughCopy('./src/styles');
+  config.addPassthroughCopy('./src/utils');
   config.addPassthroughCopy('./src/main.js');
+  config.addShortcode(
+    'makeVespers',
+    async function (psalmRef, gospelRef, prophecyRef) {
+      return makeVespers(psalmRef, gospelRef, prophecyRef);
+    },
+  );
+  config.addShortcode(
+    'makeMatins',
+    async function (psalmRef, gospelRef, prophecyRef) {
+      return makeMatins(psalmRef, gospelRef, prophecyRef);
+    },
+  );
+  config.addShortcode(
+    'makeLitugy',
+    async function (paulineRef, catholicRef, actsRef, psalmRef, gospelRef) {
+      return makeLitugy(paulineRef, catholicRef, actsRef, psalmRef, gospelRef);
+    },
+  );
+  config.addPairedShortcode('createArticleAccordions', async function (content) {
+    return await createArticleAccordions(content);    
+  });
 
   config.setServerOptions({
     // Default values are shown:

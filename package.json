@@ -1,7 +1,7 @@
 {
-  "name": "11st-starter-kit",
-  "description": "11ty, powered by Vite with Tailwind CSS and Alpine.js.",
-  "version": "3.0.0",
+  "name": "Katameros.bible",
+  "description": "Daily coptic church readings",
+  "version": "1.0.0",
   "engines": {
     "node": "18.x.x",
     "npm": "9.x.x"
@@ -9,28 +9,27 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:stefanfrede/11st-starter-kit.git"
+    "url": "git@github.com:minaalfy/katameros.bible.git"
   },
   "keywords": [
-    "alpinejs",
-    "eleventy",
-    "jamstack",
-    "liquidjs",
-    "netlify",
+    "katameros",
+    "coptic",
+    "breviary",
+    "Orthodox",
+    "Synaxarium",
     "pwa",
-    "tailwindcss",
-    "vite"
+    "11ty"
   ],
   "author": {
-    "name": "Stefan Frede",
-    "email": "stefan@frede.dev"
+    "name": "Mina Paulis",
+    "email": "minaalfy@gmail.com"
   },
   "license": "MIT",
   "private": true,
   "bugs": {
-    "url": "https://github.com/stefanfrede/11st-starter-kit/issues"
+    "url": "https://github.com/minaalfy/katameros.bible/issues"
   },
-  "homepage": "https://11st-starter-kit.netlify.app",
+  "homepage": "https://katameros.bible",
   "lint-staged": {
     "*.html": "prettier --write",
     "*.css": "stylelint --cache --fix",
@@ -38,6 +37,7 @@
   },
   "scripts": {
     "clean": "rimraf _site",
+    "create": "rimraf ./src/articles && node ./katameros-preparation/fetch-content.js",
     "prepare": "npx husky install",
     "preview": "npx vite preview",
     "predev": "run-s clean",
@@ -59,6 +59,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0-beta.2",
+    "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-plugin-vite": "^4.0.0",
     "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.5",
@@ -68,7 +69,9 @@
     "@commitlint/config-conventional": "^17.0.3",
     "@tailwindcss/typography": "^0.5.0",
     "autoprefixer": "^10.2.4",
+    "bible-passage-reference-parser": "^2.0.1",
     "browserslist": "^4.16.6",
+    "cheerio": "^1.0.0-rc.12",
     "cross-env": "^7.0.3",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
@@ -79,6 +82,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "node-fetch-cache": "^3.0.5",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.2.14",
     "postcss-cli": "^10.0.0",
@@ -96,6 +100,7 @@
   "dependencies": {
     "@11ty/eleventy-upgrade-help": "^2.0.5",
     "alpinejs": "^3.0.1",
-    "core-js": "^3.20.2"
+    "core-js": "^3.20.2",
+    "flowbite": "^1.6.3"
   }
 }

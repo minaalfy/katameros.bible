@@ -1,9 +1,8 @@
-{% assign page_title = title | append: ' :: ' | append: site.name %} {% if
-site.name == title %} {% assign page_title = title %} {% endif %} {% assign
-site_title = site.name %} {% assign current_url = site.url | append: page.url %}
-{% unless social_image %} {% assign social_image = site.url | append:
-'/images/social-share.png' %} {% endunless %} {% if meta.title %} {% assign
-page_title = meta.title %} {% endif %}
+{% assign page_title = title %} {% if site.name == title %} {% assign page_title
+= title %} {% endif %} {% assign site_title = site.name %} {% assign current_url
+= site.url | append: page.url %} {% unless social_image %} {% assign
+social_image = site.url | append: '/pwa-512x512.png' %} {% endunless %} {% if
+meta.title %} {% assign page_title = meta.title %} {% endif %}
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,17 +36,9 @@ page_title = meta.title %} {% endif %}
 
 <meta name="theme-color" content="#4a5568" />
 
-<!-- Preconnect to the font file origin -->
-<link rel="preconnect" href="https://rsms.me" crossorigin />
-
-<!-- Preload the font stylesheet asynchronously with low priority -->
-<link rel="preload" href="https://rsms.me/inter/inter.css" as="style" />
-
-<!-- https://www.filamentgroup.com/lab/load-css-simpler/ -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  crossorigin="anonymous"
+  href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Noto+Kufi+Arabic:wght@600&display=swap"
   rel="stylesheet"
-  href="https://rsms.me/inter/inter.css"
-  media="print"
-  onload="this.media='all'; this.onload=null;"
 />

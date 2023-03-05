@@ -11,10 +11,13 @@ export default defineConfig({
       input: {
         404: resolve(__dirname, '_site', '404.html'),
         main: resolve(__dirname, '_site', 'index.html'),
-        about: resolve(__dirname, '_site', 'about', 'index.html'),
       },
     },
     emptyOutDir: true,
+  },
+  preview: {
+    port: 5000,
+    open: true,
   },
   plugins: [
     VitePWA({
@@ -25,14 +28,14 @@ export default defineConfig({
         'apple-touch-icon.png',
       ],
       manifest: {
-        name: '11st-Starter-Kit',
-        short_name: '11st-Starter-Kit',
-        description: '11ty, powered by Vite with Tailwind CSS and Alpine.js.',
+        name: 'Katameros.bible',
+        short_name: 'Katameros',
+        description: 'Daily church readings',
         scope: '/',
         start_url: '/',
         display: 'standalone',
-        theme_color: '#4a5568',
-        background_color: '#fff',
+        theme_color: '#f8f4ee',
+        background_color: '#f8f4ee',
         icons: [
           {
             src: 'pwa-72x72.png',
@@ -50,7 +53,7 @@ export default defineConfig({
             type: 'image/png',
           },
           {
-            src: 'pwa-144x144.png',
+            src: 'mstile-144x144.png',
             sizes: '144x144',
             type: 'image/png',
           },
@@ -65,17 +68,12 @@ export default defineConfig({
             type: 'image/png',
           },
           {
-            src: 'pwa-384x384.png',
-            sizes: '384x384',
-            type: 'image/png',
-          },
-          {
             src: 'pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
           },
           {
-            src: 'maskable_icon.png',
+            src: 'pwa-192x192.png',
             sizes: '196x196',
             type: 'image/png',
             purpose: 'any maskable',

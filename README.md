@@ -57,4 +57,5 @@ First we get the katameros data for that specific day reading and then get the j
 - Logic for redirecting to the right article URL on a date input by the user stored in `src/main.js` please read it.
 
 ## Road map for the known issues and suggested features
+- All days should work as expected except the Paskha days + palm sunday, so I'm currently will focus on this.
 - I'm gonna add the list very soon, please feel free to add your suggessions here.

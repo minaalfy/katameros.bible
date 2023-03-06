@@ -9,6 +9,7 @@ katameros-preparation/articles
 
 # secrets
 .env
+.DS_Store
 
 # logs
 *.log

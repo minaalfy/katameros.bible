@@ -123,7 +123,7 @@ permalink: ${permalink}
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         ${cleanedArticleContent}
       {% endcreateArticleAccordions %}
     </section>

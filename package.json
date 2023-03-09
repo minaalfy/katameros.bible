@@ -100,7 +100,7 @@
   "dependencies": {
     "@11ty/eleventy-upgrade-help": "^2.0.5",
     "alpinejs": "^3.0.1",
-    "core-js": "^3.20.2",
+    "core-js": "^3.29.0",
     "flowbite": "^1.6.3"
   }
 }

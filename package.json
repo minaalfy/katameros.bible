@@ -68,7 +68,7 @@
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
     "@tailwindcss/typography": "^0.5.0",
-    "autoprefixer": "^10.2.4",
+    "autoprefixer": "^10.4.14",
     "bible-passage-reference-parser": "^2.0.1",
     "browserslist": "^4.21.5",
     "cheerio": "^1.0.0-rc.12",

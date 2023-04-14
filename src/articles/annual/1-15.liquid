@@ -6,6 +6,9 @@ permalink: annual/1-15.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.5:11-12' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/1-15.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>قراءة اليوم الخامس عشر من توت (نقل جسد القديس اسطفانوس رئيس الشمامسة) مُحوَّلة علي قراءة يوم أوَّل طوبي ( شهادة القديس اسطفانوس رئيس الشمامسة )</p>
 <p>وهو مكتوب خطأ في القطمارس الحالي تحت يوم ١٥ توت أنه شهادة القديس اسطفانوس</p>
 <p>وأيضاً في الدفنار أنه شهادة القديس اسطفانوس رغم أن الدفنار يذكر أيضاً يوم أول طوبي أنه شهادة القديس اسطفانوس!!</p>

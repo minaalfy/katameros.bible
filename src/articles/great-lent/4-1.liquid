@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'قراءات يوم الأثنيـن من الأسبوع الـرابع'
+title: 'قراءات يوم الأثنين من الأسبوع الرابع'
 permalink: great-lent/4-1.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/4-1.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;الَّذِي خَلَّصَنَا وَدَعَانَا دَعْوَةً مُقَدَّسَةً، لاَ بِمُقْتَضَى أَعْمَالِنَا، بَلْ بِمُقْتَضَى الْقَصْدِ وَالنِّعْمَةِ الَّتِي أُعْطِيَتْ لَنَا فِي الْمَسِيحِ يَسُوعَ قَبْلَ الأَزْمِنَةِ الأَزَلِيَّةِ&#8221; (٢تي ١: ٩)</p>
 <p>[الذي من قبل صلاحك دعوت بولس هذا الذي كان طاردًا زمانًا إناءًا مختارًا] (سر البولس).</p>
 <p>[ليته لا يهمل أحد في مقابلة الملك لئلا يُطرد من حجال العريس. ليته لا يوجد بيننا من يستقبله بكآبة، لئلا يُدان كمواطنٍ شرير يرفض استقباله كملكٍ عليه. لنأتِ إليه معًا ببهجة، ولنستقبله بفرح، ونتمسك بوليمتنا بكل أمانة] (الأب ميثوديوس)<a href="#_ftn1" name="_ftnref1">[1]</a></p>

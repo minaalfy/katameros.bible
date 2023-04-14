@@ -6,6 +6,9 @@ permalink: annual/2-30.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.40:9,2' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/2-30.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>قراءة هذا اليوم (تكريس كنيسة مار مرقس بالإسكندرية ووجود رأسه المقدس) مُحوَّلة على قراءات يوم ثلاثين برمودة (شهادة القديس مرقس الإنجيلي كاروز الديار المصرية) بحسب القطمارس الحالي.</p>
 <p>ولكن تأتي قراءة هذا اليوم مُحوَّلة على قراءة عشرين بشنس بحسب ما ورد في كتاب كنوز النعمة الجزء الأوَّل ص ٢٨٥ وهي القراءة التي تتفق فقط في الكاثوليكون مع قراءة ثلاثين برمودة.</p>
 <p>كما أنها تأتي أيضاً مُحوَّلة علي يوم عشرين بشنس في مخطوطة دير البراموس وإن كانت تختلف عن قراءة عشرين بشنس بالقطمارس الحالي في المزامير وجزء من البولس والكاثوليكون.</p>

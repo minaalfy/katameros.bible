@@ -6,6 +6,9 @@ permalink: great-lent/6-2.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/6-2.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;قُومِي اسْتَنِيرِي لأَنَّهُ قَدْ جَاءَ نُورُكِ، وَمَجْدُ الرَّبِّ أَشْرَقَ عَلَيْكِ. لأَنَّهُ هَا هِيَ الظُّلْمَةُ تُغَطِّي الأَرْضَ وَالظَّلاَمُ الدَّامِسُ الأُمَمَ. أَمَّا عَلَيْكِ فَيُشْرِقُ الرَّبُّ، وَمَجْدُهُ عَلَيْكِ يُرَى. فَتَسِيرُ الأُمَمُ فِي نُورِكِ، وَالْمُلُوكُ فِي ضِيَاءِ إِشْرَاقِكِ&#8221; (إش ٦٠: ١– ٣).</p>
 <p>[إذا ماوقفنا في هيكلك المقدَّس نحسب كالقيام في السماء] (قطع الساعة الثالثة)</p>
 <p>[يليق بِنَا أن نخرج من هذا الموضع نحمل ما يليق به كموضع مقدّس كأناس هابطين من السماء عينها! علموا الذين في الخارج إنكم كنتم في صحبة السيرافيم محصيين مع السمائيين معدين مع صفوف الملائكة تتحدثون مع الرب وتكونون في صحبة السيد المسيح] (القديس يوحنا ذهبي الفم)<br />

@@ -6,6 +6,9 @@ permalink: annual/3-17.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.132:9,10,17,18' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/3-17.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8221; لأنه هكذا قال السيد الرب: هأنذا أسأل عن غنمي وأفتقدها &#8221;</p>
 <p>(حز ١١:٣٤)</p>
 <p>الرعاة إضبطهم &#8230;.. أَعْط بهاء للإكليروس</p>

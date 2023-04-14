@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'أحد أبـوة الآب (الرفـاع)'
+title: 'أحد أبوة الآب (الرفاع)'
 permalink: special/21.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.46:10' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: special/21.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p><strong>&#8220;اُنْظُرُوا أَيَّةَ مَحَبَّةٍ أَعْطَانَا الآبُ حَتَّى نُدْعَى أَوْلاَدَ اللهِ!&#8221; (١يو ٣ : ١)</strong></p>
 <p>&#8220;<strong>إِذْ لَمْ تَأْخُذُوا رُوحَ الْعُبُودِيَّةِ أَيْضًا لِلْخَوْفِ، بَلْ أَخَذْتُمْ رُوحَ التَّبَنِّي الَّذِي بِهِ نَصْرُخُ: «يَا أَبَا الآبُ».</strong>&#8221; (رو 8: 15)</p>
 <p>[ياالله الذي يدبّر أعمالنا بحكمة، ما هذه الرأفة كلها، وما هذا الإهتمام العظيم الذي لأبوتك وما هذه اللجّة التي لصلاحك] (صلاة شكر بعد التناول &#8211; القدّاس الكيرلسي)</p>

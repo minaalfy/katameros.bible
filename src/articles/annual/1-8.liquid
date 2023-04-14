@@ -6,6 +6,9 @@ permalink: annual/1-8.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.105:14-15' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/1-8.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8221; إن كان منكم نبي للرب، فبالرؤيا أستعلن له. في الحلم أكلمه وأما عبدي موسى فليس هكذا، بل هو أمين في كل بيتي &#8221; (عد ١٢: ٧)</p>
 <p>&#8221; إن السيد الرب لا يصنع أمرا إلا وهو يعلن سره لعبيده الأنبياء &#8221; (عا ٧ : ٣)</p>
 <p>(ربطتني بكل الأدوية المؤدية إلي الحياة. أنت الذي ارسلت لي الأنبياء من أجلي أنا المريض )</p>

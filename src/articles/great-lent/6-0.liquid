@@ -6,6 +6,9 @@ permalink: great-lent/6-0.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.17:3,5' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/6-0.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;إِنْ كَانَ أَحَدٌ لاَ يُولَدُ مِنَ الْمَاءِ وَالرُّوحِ لاَ يَقْدِرُ أَنْ يَدْخُلَ مَلَكُوتَ اللهِ.&#8221; (يو ٥:٣)</p>
 <p>[اجعلهم مستحقّين هذه النعمة العظيمة التي للعماد المقدّس عَرَّهِم من الإنسان العتيق وجددّ ميلادهم بالحياة الأبدية واملأهم من قوة روحك القدّوس بمعرفة مسيحك لكي لا يصيروا بعد أبناء الجسد بل أبناء الملكوت] (من الصلوات السريّة في طقس المعمودية).</p>
 <p>[الإستنارة وهى المعمودية مركب تسير نحو الله مسايرة المسيح رأس الدين تمام العقل، الإستنارة مفتاح ملكوت السموات، استعادة الحياة، عتق العبودية، انحلال الرباطات] (القديس غريغوريوس الثيئولوغس)<a href="#_ftn1" name="_ftnref1">[1]</a></p>

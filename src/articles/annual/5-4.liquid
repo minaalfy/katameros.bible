@@ -6,6 +6,9 @@ permalink: annual/5-4.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.19:1,4' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/5-4.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;( وعلمه فوقي محبة &#8220;( نش ٤:٢</p>
 <p>نعم حقاً نسبحك. نعم حقاً نمجدك. يا ربى يسوع المسيح مخلصى الصالح.</p>
 <p>لا نتعب أبداً. ولا نكف عن تسبيحك. يا ربى يسوع المسيح مخلصى الصالح</p>

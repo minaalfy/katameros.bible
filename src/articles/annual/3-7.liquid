@@ -6,6 +6,9 @@ permalink: annual/3-7.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.34:17-18' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/3-7.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>قراءة هذا اليوم ( شهادة القديس مار جرجس الجديد الإسكندري ) مُحوَّلة علي قراءة يوم ثالث وعشرين برمودة ( شهادة القديس جرجس الروماني )</p>
 <p>ويذكر الدفنار والسنكسار تكريس بيعة الشهيد العظيم مار جرجس الكبير باللد فقط ، ويضيف السنكسار إليهم نياحة القديس مينا أسقف تمي وشهادة القديس نهروه</p>
 

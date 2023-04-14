@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'قراءات يوم الخميس من الأسبـوع الثاني'
+title: 'قراءات يوم الخميس من الأسبوع الثاني'
 permalink: great-lent/2-4.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/2-4.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;وَأَنَا، يَقُولُ الرَّبُّ، أَكُونُ لَهَا سُورَ نَارٍ مِنْ حَوْلِهَا، وَأَكُونُ مَجْدًا فِي وَسَطِهَا.&#8221; (زك٢: ٥)</p>
 <p>&#8220;وَلَمَّا صَلَّوْا تَزَعْزَعَ الْمَكَانُ الَّذِي كَانُوا مُجْتَمِعِينَ فِيهِ، وَامْتَلأَ الْجَمِيعُ مِنَ الرُّوحِ الْقُدُسِ&#8221; (أع٤: ٣١)</p>
 <p>[فليضئ علينا نور معرفتك الحقيقية لنضئ بشكلك المحيي] (من صلوات القسمة المقدّسة).</p>

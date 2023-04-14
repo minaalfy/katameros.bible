@@ -1,5 +1,6 @@
 const fs = require('fs');
 const { URLSearchParams } = require('url');
+const { cleanContent, hourNames } = require('./utils/article-helpers');
 const { fetchBuilder, FileSystemCache } = require('node-fetch-cache');
 
 const cacheOptions = {
@@ -35,43 +36,90 @@ for (const d of directories) {
 }
 
 const greatLentData = fs.readFileSync(
-  './katameros-prep/data/great-lent-readings.json',
+  './katameros-preparation/data/great-lent-readings.json',
 );
 const greatLent = JSON.parse(greatLentData);
 
 const pentecostData = fs.readFileSync(
-  './katameros-prep/data/pentecost-readings.json',
+  './katameros-preparation/data/pentecost-readings.json',
 );
 const pentecost = JSON.parse(pentecostData);
 
 const sundaysData = fs.readFileSync(
-  './katameros-prep/data/sunday-readings.json',
+  './katameros-preparation/data/sunday-readings.json',
 );
 const sundays = JSON.parse(sundaysData);
 
 const annualData = fs.readFileSync(
-  './katameros-prep/data/annual-readings.json',
+  './katameros-preparation/data/annual-readings.json',
 );
 const annual = JSON.parse(annualData);
 
 const specialData = fs.readFileSync(
-  './katameros-prep/data/special-readings.json',
+  './katameros-preparation/data/special-readings.json',
 );
 const special = JSON.parse(specialData);
 
-async function createDayContent(permalink, title, day, articleContent) {
-  let cleanedArticleContent = articleContent
-    .replaceAll('ـ', '')
-    .replaceAll('&nbsp;', '')
-    .replaceAll('', '');
+function createHourlTemplayte(day) {
+  let template = ``;
+  if (day.Hours) {
+    for (const hour of day.Hours) {
+      template += `
+    <li class="mb-2" x-data="{selected:false}">
+  <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+    <div class="flex items-center justify-between">
+      <span class="kufi">${hourNames[hour.HourName]}</span>
+      <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+    </div>
+  </button>
+  <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+    <div class="p-4">
+    {% makeHour '${hour.Psalm_Ref}' '${hour.Gospel_Ref}' '${hour.Prophecy1}' '${
+        hour.Prophecy2 ? hour.Prophecy2 : ''
+      }' '${hour.Prophecy3 ? hour.Prophecy3 : ''}' %}
+    </div>
+  </div>
+</li>`;
+    }
+  }
+  if (day.VespersHours) {
+    for (const hour of day.VespersHours) {
+      template += `
+      <li class="mb-2" x-data="{selected:false}">
+    <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
+      <div class="flex items-center justify-between">
+        <span class="kufi">${hourNames[hour.HourName]} عشية</span>
+        <span class="ico-plus" :class="selected && 'opened'" aria-hidden="true"></span>
+      </div>
+    </button>
+    <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+      <div class="p-4">
+      {% makeHour '${hour.Psalm_Ref}' '${hour.Gospel_Ref}' '${
+        hour.Prophecy1
+      }' '${hour.Prophecy2 ? hour.Prophecy2 : ''}' '${
+        hour.Prophecy3 ? hour.Prophecy3 : ''
+      }' %}
+      </div>
+    </div>
+  </li>`;
+    }
+  }
+  return template;
+}
+
+async function createDayContent(permalink, title, day, cleanedArticleContent) {
+  let cleanedTitle = cleanContent(title);
   const content = `---
 layout: 'layouts/reading.html'
-title: '${title}'
+title: '${cleanedTitle}'
 permalink: ${permalink}
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if '${day.Hours}' != 'undefined' %}
+      ${createHourlTemplayte(day)}
+      {% else %}
       {% if '${day.V_Psalm_Ref}' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -119,6 +167,8 @@ permalink: ${permalink}
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
@@ -131,7 +181,14 @@ permalink: ${permalink}
   `;
   return content;
 }
-async function writeDayFiles(day, filename, articles) {
+
+let pentecostSearchJson = [];
+let greatLentSearchJson = [];
+let sundaysSearchJson = [];
+let annualSearchJson = [];
+let specialSearchJson = [];
+
+async function writeDayFiles(day, filename, articles, searchJson) {
   const name = `./src/articles/${filename}.liquid`;
   const jsonPath = `./katameros-preparation/articles/${filename}.json`;
 
@@ -147,12 +204,19 @@ async function writeDayFiles(day, filename, articles) {
 
   const title = JSON.parse(articleJson).title.rendered;
   const articleContent = JSON.parse(articleJson).content.rendered;
+  const cleanedArticleContent = cleanContent(articleContent);
+  searchJson.push({
+    id: day.Id,
+    articleId: articles[day.Id],
+    title: title,
+    content: cleanedArticleContent,
+  });
 
   const content = await createDayContent(
     `${filename}.html`,
     title,
     day,
-    articleContent,
+    cleanedArticleContent,
   );
 
   fs.writeFile(name, content, (err) => {
@@ -178,6 +242,7 @@ async function writeAllFiles() {
       day,
       `pentecost/${day.Week}-${day.DayOfWeek}`,
       pentecostArticles,
+      pentecostSearchJson,
     );
   }
   for (const day of greatLent) {
@@ -185,6 +250,7 @@ async function writeAllFiles() {
       day,
       `great-lent/${day.Week}-${day.DayOfWeek}`,
       greatLentArticles,
+      greatLentSearchJson,
     );
   }
   for (const day of sundays) {
@@ -192,6 +258,7 @@ async function writeAllFiles() {
       day,
       `sundays/${day.Month_Number}-${day.Day}`,
       sundaysArticles,
+      sundaysSearchJson,
     );
   }
   for (const day of annual) {
@@ -199,10 +266,36 @@ async function writeAllFiles() {
       day,
       `annual/${day.Month_Number}-${day.Day}`,
       annualArticles,
+      annualSearchJson,
     );
   }
   for (const day of special) {
-    await writeDayFiles(day, `special/${day.Id}`, specialArticles);
+    await writeDayFiles(
+      day,
+      `special/${day.Id}`,
+      specialArticles,
+      specialSearchJson,
+    );
+  }
+
+  for (const kind of [
+    'pentecost',
+    'greatLent',
+    'sundays',
+    'annual',
+    'special',
+  ]) {
+    fs.writeFile(
+      `./src/public/${kind}.json`,
+      JSON.stringify(eval(kind + 'SearchJson')),
+      (err) => {
+        if (err) {
+          return console.error(
+            `Autsch! Failed to create ${kind} jsons: ${err.message}.`,
+          );
+        }
+      },
+    );
   }
 }
 

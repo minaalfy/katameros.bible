@@ -6,6 +6,9 @@ permalink: annual/10-26.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.105:14-15' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/10-26.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>قراءة هذا اليوم (نياحة يشوع بن نون ) مُحوَّلة علي قراءة يوم ثامن توت ( نياحة موسي النبي )</p>
 <p>وأيضاً حسب السنكسار القبطي هذا اليوم هو تذكار تكريس كنيسة رئيس الملائكة غبريال بجبل النقلون بالفيوم لذلك جاء في كنوز النعمة (جزء ثاني ) أنه يُقْرأ في هذا اليوم قراءات ثاني وعشرين كيهك ( تذكار رئيس الملائكة غبريال )</p>
 <p>وتذكار يشوع بن نون يأتي مرتان في السنة ( ٤ توت ، ٢٦ بؤونه ) واليومان مُحوَّلة قراءتهما علي قراءة يوم ٨ توت تذكار نياحة موسي النبي ، وكان رأي الأرشيدياكون بانوب عبده ( إعتماداً علي ما جاء بالؤلؤة صفحة ٥٨٤ ) أن يخصص يوم ٢٦ بؤونه للملاك غبريال وتُتْلي فيه فصول ٢٢ كيهك ، وبهذا لا يكون تذكار يشوع مكررا ( كتاب كنوز النعمة لمعونة خدام الكلمة &#8211; الجزء الثاني ).</p>

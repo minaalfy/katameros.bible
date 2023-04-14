@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'قراءات يوم الأربعــاء من الأسبــوع الــرابــع'
+title: 'قراءات يوم الأربعاء من الأسبوع الرابع'
 permalink: great-lent/4-3.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/4-3.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;فِي ذلِكَ الْيَوْمِ غَنُّوا لِلْكَرْمَةِ الْمُشَتَهَاةِ: أَنَا الرَّبُّ حَارِسُهَا. أَسْقِيهَا كُلَّ لَحْظَةٍ. لِئَلاَّ يُوقَعَ بِهَا أَحْرُسُهَا لَيْلاً وَنَهَارًا.&#8221; (إش٢٧: ٢، ٣)</p>
 <p>[أيها الرب إله القوات ارجع واطلع وأنظر من السماء وتعهّد هذه الكرمة وأصلحها وثبتها هذه التي غرستها يمينك] (من ألحان القدّاس الإلهي).</p>
 <p>[إن الكنيسة مبعثرة (منتشرة) في كل أرجاء المسكونة لكن لها إيمان واحد سُلم من الرسل إلى تلاميذ الرسل وعلى الرغم من أن لغات البشر تختلف إلا أن جوهر التقليد واحد في كل مكان] (القديس ايريناؤس)<a href="#_ftn1" name="_ftnref1">[1]</a></p>

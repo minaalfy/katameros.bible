@@ -6,6 +6,9 @@ permalink: annual/9-29.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.40:2-3' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/9-29.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>قراءة هذا اليوم ( نياحة القديس سمعان العمودي من جبل أنطاكية ) مُحوَّلة علي قراءةيوم ثالث مسري</p>
 <p>أي أن هذا القديس له تذكاران في الكنيسة ( ٢٩ بشنس ، ٣ مسري )</p>
 <p>مذكور في السنكسار تحت يوم ٣ مسري أنه تذكار نقل جسده ، بينما يذكر القطمارسوالدفنار أنه تذكار نياحته</p>

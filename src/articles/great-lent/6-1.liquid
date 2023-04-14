@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'قراءات يوم الأثنيـن من الأسبـوع السادس'
+title: 'قراءات يوم الأثنين من الأسبوع السادس'
 permalink: great-lent/6-1.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/6-1.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;فَاللهُ الآنَ يَأْمُرُ جَمِيعَ النَّاسِ فِي كُلِّ مَكَانٍ أَنْ يَتُوبُوا، مُتَغَاضِيًا عَنْ أَزْمِنَةِ الْجَهْلِ.&#8221; (أع ١٧: ٣٠).</p>
 <p>[رحمة للذين في التوبة، غير المؤمنين ردهم لتنقض افتراقات البيعة] (القدّاس الغريغوري &#8211; الطلبة).</p>
 <p>[من يدعون أنفسهم أبراراً لا تقترب إليهم النعمة فإن كانت التوبة هى بداية النعمة فمن الواضح أن احتقار التوبة هو تخلّي عن النعمة] (القديس أمبروسيوس)<a href="#_ftn1" name="_ftnref1">[1]</a></p>

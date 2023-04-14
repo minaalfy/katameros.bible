@@ -6,6 +6,9 @@ permalink: sundays/9-4.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.46:10-11' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: sundays/9-4.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8221; من سيفصلنا عن محبة المسيح؟ أشدة أم ضيق أم اضطهاد أم جوع أم عري أم خطر أم سيف كما هو مكتوب: إننا من أجلك نمات كل النهار. قد حسبنا مثل غنم للذبح ولكننا في هذه جميعها يعظم انتصارنا بالذي أحبنا &#8221; (رو ٨ : ٣٥-٣٧)</p>
 <p>&#8221; نعم يارب يارب الذي اعطانا السلطان أن ندوس الحيات والعقارب وكل قوة العدو ، اسحق رؤوسه تحت أقدامنا سريعاً وبدَّد عنَّا كلَّ معقولاته الشرِّيرة المُقاومة لنا لأنك أنت هو ملكنا كلِّنا أيُّها المسيح إلهُنا &#8221; التحليل الأوَّل من التحاليل الثلاثة لختام رفع بخور عشية وباكر</p>
 <p>&#8221; يليق بنا ألا نخشى تجارب هذه الحياة قط، فهي فرصة مقدَّمة للغلبة ومادة للنصرة&#8230;</p>

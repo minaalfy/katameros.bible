@@ -6,6 +6,9 @@ permalink: annual/8-23.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.34:17-18' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/8-23.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>( تذكار شهادة أمير الشهداء مارجرجس الروماني )</p>
 <p>إلى هناك أنزل يارب أبطالك (يؤ ٣ : ١١)</p>
 <p>&#8221; وكان يُرتل مع داود قائلاً : أحاط بي جميع الأمم ، لكن بإسم يسوع إلهي ، انتقمت منهم .</p>

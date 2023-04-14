@@ -6,6 +6,9 @@ permalink: pentecost/5-4.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.18:46-47' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: pentecost/5-4.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <h3>إمتداد الإرسالية</h3>
 <p>تتكلم قراءات اليوم عن <strong>إمتداد الإرسالية</strong> فالكنيسة جسد المسيح هي ضمان دوام إرسالية الإبن للعالم كما قال للكنيسة جسده &#8220;أنتم نور العالم.. أنتم ملح الأرض&#8221;.. فمسئولية الكنيسة أن تُظهِر حياة الإبن وخلاصه لغير المؤمنين وتجول تصنع خيراً وتكرز ببشارة الملكوت للعالم.. وخطورة ضياع الهدف في الكنيسة أو أن يكون لها معنى أو هدف أخر غير كرازتها بإسم يسوع المخلص.</p>
 <p>فكما تتكلم القراءات عن الصورة الحقيقية للكنيسة التي تستعلن فيها على الدوام <strong>إرسالية إبن الله</strong>، فهي من جانب آخر تحذر من الصورة المزيفة والمشوهة التي يقدمها المعتبرون خداماً وقادة عن كنيسة الله..</p>

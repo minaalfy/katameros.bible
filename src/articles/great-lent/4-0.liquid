@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'أحـد الإستعـلان (السامريــة)'
+title: 'أحد الإستعلان (السامرية)'
 permalink: great-lent/4-0.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.27:14,13' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/4-0.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;قَالَ لَهَا يَسُوعُ: «أَنَا الَّذِي أُكَلِّمُكِ هُوَ».&#8221; (يو ٤: ٢٦)</p>
 <p>&#8220;وَلاَ يُعَلِّمُونَ كُلُّ وَاحِدٍ قَرِيبَهُ، وَكُلُّ وَاحِدٍ أَخَاهُ قَائِلاً: اعْرِفِ الرَّبَّ، لأَنَّ الْجَمِيعَ سَيَعْرِفُونَنِي مِنْ صَغِيرِهِمْ إِلَى كَبِيرِهِمْ.&#8221; (عب١١:٨)</p>
 <p>[والموت الذي دخل إلي العالم بحسد إبليس هدمته بالظهور المحيي الذي لابنك الوحيد] (صلاة الصلح – القدّاس الباسيلي).</p>

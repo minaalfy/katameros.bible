@@ -6,6 +6,9 @@ permalink: pentecost/7-3.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.19:8,7' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: pentecost/7-3.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <h3><strong>الكنيسة المدعوة والمختارة في المسيح</strong></h3>
 <p>تتكلم قراءات اليوم عن <strong>الكنيسة المدعوة والمختارة في المسيح</strong> .. فالكنيسة جسد المسيح، كرمة العهد الجديد، جمعت أغصانها من كل الأمم ومن كل القبائل والشعوب والألسنة، وبعد ما كانت الأغصان غريبة عن الكرمة وخالية من الحياة، صارت في المسيح جنساً مختاراً، مملكة وكهنوتاً وأمة مقدسة وشعباً مبرراً، وصارت دائماً كرمة مشتهاة بالرب حارسها، الذي يسقيها كل لحظة ويحرسها ليلاً ونهاراً، ولم تعد موحشة غريبة مطروحة، بل صارت تحيا في المسيح دائماً زمن الحب..</p>
 <p></p>

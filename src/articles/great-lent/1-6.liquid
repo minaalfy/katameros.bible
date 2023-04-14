@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'يوم السبت من الاسبوع الاول (سبت طـريـق الكمـال)'
+title: 'يوم السبت من الاسبوع الاول (سبت طريق الكمال)'
 permalink: great-lent/1-6.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/1-6.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;وَإِلهُ السَّلاَمِ نَفْسُهُ يُقَدِّسُكُمْ بِالتَّمَامِ. وَلْتُحْفَظْ رُوحُكُمْ وَنَفْسُكُمْ وَجَسَدُكُمْ كَامِلَةً بِلاَ لَوْمٍ عِنْدَ مَجِيءِ رَبِّنَا يَسُوعَ الْمَسِيحِ.&#8221; (١تس٥: ٢٣)</p>
 <p>[وأما نحنُ كلُّنا فهب لنا كماَلنا المسيحي الذي يرضيك أمامك.] (أوشية الراقدين).</p>
 <p>[كمال كل بركة كائن في اسمك القدوس] (ابصالية الأحد).</p>

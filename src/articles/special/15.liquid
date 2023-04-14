@@ -6,6 +6,9 @@ permalink: special/15.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: special/15.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <h3><span class="ez-toc-section" id="%D8%AA%D8%AE%D8%AA%D8%AA%D9%85_%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%A1%D8%A7%D8%AA_%D8%A8%D8%A3%D9%81%D8%B1%D8%A7%D8%AD_%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D8%A9%D8%8C_%D9%88%D8%A8%D9%87%D8%AC%D8%A9_%D8%A7%D9%84%D9%82%D9%8A%D8%A7%D9%85%D8%A9_%D9%85%D9%86_%D8%A7%D9%84%D9%85%D9%88%D8%AA%D8%8C_%D9%88%D8%A7%D9%84%D9%86%D8%AC%D8%A7%D8%A9_%D9%85%D9%86_%D8%A7%D9%84%D9%87%D9%84%D8%A7%D9%83_%D8%A7%D9%84%D8%A3%D8%A8%D8%AF%D9%8A_%D9%85%D9%85%D8%AB%D9%84%D8%A7_%D9%81%D9%8A_%D9%86%D8%AC%D8%A7%D8%A9_%D9%8A%D9%88%D9%86%D8%A7%D9%86_%D9%85%D9%86_%D8%A8%D8%B7%D9%86_%D8%A7%D9%84%D8%AD%D9%88%D8%AA"></span><strong>تختتم</strong> <strong>القراءات</strong> بأفراح التوبة، وبهجة القيامة من الموت، والنجاة من الهلاك الأبدي ممثلا في نجاة يونان من بطن الحوت.<span class="ez-toc-section-end"></span></h3>
 <p><strong>تبدأ</strong> <strong>القراءات</strong> <strong>بمزمور</strong> <strong>باكر</strong> الذي تتغني فيه النفس التائبة بسكيب الفرح والسرور عِوضا عن النوح والمسوح.</p>
 <p>&#8220;رددت نوحي إلى فرح لي مزقت مسحي ومنطقتني سرورا&#8221;.</p>

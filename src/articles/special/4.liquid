@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'أحــــد الشـعـــانيــن'
+title: 'أحد الشعانين'
 permalink: special/4.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.118:26-27' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: special/4.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <h3></h3>
 <p>&#8220;المَلِكَ ببَهائهِ تنظُرُ عَيناكَ. ترَيانِ أرضًا بَعيدَةً&#8221; (إش ٣٣ : ١٧)</p>
 <p>[مبارك الآتي باسم الرب، وأيضاً باسم الرب.. فلنرتل قائلين هلليلويا هلليلويا هلليلويا. المجد هو لإلهنا، وأيضاً المجد هو لإلهنا] (لحن إفلوجيمينوس)</p>

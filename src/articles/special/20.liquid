@@ -6,6 +6,9 @@ permalink: special/20.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.17:1-2' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: special/20.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p><strong>&#8220;توبني فأتوب، لأنك أنت الرب إلهى&#8221; </strong>(إر ٣١: ١٨)</p>
 <p>[فلتشرق فينا حواس النور ولا تغطينا ظلمة الآلام] (ذكصولوجية باكر)</p>
 <p>[إنه يود أن يقدم فرصة للتوبة لكل محبوبيه، مُثبتًا إياها بإرادته القادرة إذن، فلنطع إرادته العظيمة الممجدة، وإذ نضرع طالبين رحمته وحنو ترفقه، تاركين كل عمل بطال وخصام وحسد يقود إلى الموت، نعود إليه ونلقي بأنفسنا في مراحمه.] (القديس إكليمنضس الروماني).</p>

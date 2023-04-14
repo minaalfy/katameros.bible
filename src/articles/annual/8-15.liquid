@@ -6,6 +6,9 @@ permalink: annual/8-15.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.5:11-12' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/8-15.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>قراءة هذا اليوم ( تذكار أنبا أغابوس الرسول أحد السبعين ) مُحوَّلة علي قراءة يوم أول طوبه ( شهادة القديس إستفانوس رئيس الشمامسة )</p>
 <p>يضيف الدفنار والسنكسار تذكار أول هيكل للقديس نيقولاوس أسقف ميرا ، ونياحة القديسة ألكسندرة الملكة وتذكار نياحة البابا مرقس السادس البطريرك ال ١٠١</p>
 

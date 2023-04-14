@@ -6,6 +6,9 @@ permalink: annual/2-22.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.105:1-3' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/2-22.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;يأكل الودعاء ويشبعون. يسبح الرب طالبوه. تحيا قلوبكم إلى الأبد. تذكر وترجع إلى الرب كل أقاصي الأرض. وتسجد قدامك كل قبائل الأمم&#8221; (مز22: 26، 27).</p>
 <p>[سيرتك التى عرفناها: وأيقوناتك التى رسمتها: ملأت قلوبنا مسرة: يا لوقا الأنجيلي&#8230;</p>
 <p>فى أنجيلك المقدس: جعلتنا نعرف مخلصنا: صديق البشرية: الكاهن والذبيحة]. (ذكصولوجية القديس لوقا الإنجيلي)</p>

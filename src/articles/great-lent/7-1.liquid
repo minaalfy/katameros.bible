@@ -6,6 +6,9 @@ permalink: great-lent/7-1.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/7-1.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;تَعَالَوْا يَا مُبَارَكِي أَبِي، رِثُوا الْمَلَكُوتَ الْمُعَدَّ لَكُمْ مُنْذُ تَأْسِيسِ الْعَالَمِ &#8230; جُعْتُ فَأَطْعَمْتُمُونِي &#8230; بِمَا أَنَّكُمْ فَعَلْتُمُوهُ بِأَحَدِ إِخْوَتِي هؤُلاَءِ الأَصَاغِرِ، فَبِي فَعَلْتُمْ.&#8221; (مت ٢٥: ٣٤– ٤٠)</p>
 <p>[يأتي الشهداء حاملين عذاباتهم ويأتي الصدّيقون حاملين فضائلهم] (ختام الثيئوطوكيات الواطس)</p>
 <p>[من لا يرحم لا يستحق مراحم الله ولا يتحصل على أي نصيب من العطف الإلهي بصلواته] (الشهيد كبريانوس)<a href="#_ftn1" name="_ftnref1">[1]</a></p>

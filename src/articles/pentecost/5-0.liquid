@@ -6,6 +6,9 @@ permalink: pentecost/5-0.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.135:6,21' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: pentecost/5-0.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <h3>أحد الطريق إلى الآب</h3>
 <p>&#8220;أنا هو الطريق والحق والحياة ليس أحد يأتي إلى الآب إلا بي&#8221; (يو 14: 6).</p>
 <ul>

@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'قراءات يوم الجمعـة من الأسبـوع الـرابـع'
+title: 'قراءات يوم الجمعة من الأسبوع الرابع'
 permalink: great-lent/4-5.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/4-5.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;لأَنَّهُ مِنْ مَشْرِقِ الشَّمْسِ إِلَى مَغْرِبِهَا اسْمِي عَظِيمٌ بَيْنَ الأُمَمِ، وَفِي كُلِّ مَكَانٍ يُقَرَّبُ لاسْمِي بَخُورٌ وَتَقْدِمَةٌ طَاهِرَةٌ&#8221; (ملا١:١١)</p>
 <p>[واعطيتهم كعظيم الموهبة التي لا تحٌد التي لنعمتك ان يبشروا في كل الأمم بالغنى الذي لا يستقصي الذي لرحمتك] (سر الكاثوليكون)</p>
 <p>[كما أن الخبز المكسور، كان مرة مبعثرًا على التلال، وقد جُمع ليصير (خبزًا) واحدًا، كذلك اجمع كنيستك من أقاصي الأرض في ملكوتك] (ليتورچيا &#8211; الديداكية)<a href="#_ftn1" name="_ftnref1">[1]</a></p>

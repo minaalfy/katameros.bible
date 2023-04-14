@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'قراءات يوم الأثنيـن من الأسبـوع الثالث'
+title: 'قراءات يوم الأثنين من الأسبوع الثالث'
 permalink: great-lent/3-1.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/3-1.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;من سلك في الطريق (المقدّسة) حتى الجُهَّال لا يضل لا يكون هناك أسد وحش مفترس لا يصعد إليها لا يوجد هناك بل يسلك المفديون فيها&#8221; (إش ٣٥: ٨، ٩).</p>
 <p>&#8220;إذا نطقوا به تستنير عقولهم وتصعد إلى العلو قلوبهم&#8221; (إبصالية الثلاثاء).</p>
 <p>[من له النور يسهر (والظلمة لاتدركه. يو٥:١) ولا ينام حيث لا توجد ظلمة من يستنير يكون يقظاً من جهة الله هكذا يعيش] (القديس إكليمنضس الإسكندري)<a href="#_ftn1" name="_ftnref1">[1]</a></p>

@@ -6,6 +6,9 @@ permalink: sundays/7-5.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.93:3-4' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: sundays/7-5.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>إن كنت لا أفتح لكم كوى السماوات، وأفيض عليكم بركة حتى لا توسع &#8221; (ملا ٣: ١٠) &#8221; الله هو عمانوئيل الطعام الحقيقي شجرة الحياة العديمة الموت &#8230; بركات الناموس ليس فيها شيء يُشبهك &#8221; ابصالية الإثنين ( قطعة ٢٢،٧)</p>
 <p>&#8221; لقد شفَى المرضى، حتى إذ يصيروا أصحّاء يشتركون في خبز البركة، ولكن ما داموا مرضى فلا يقدرون أن ينالوا خبز بركة يسوع<a href="#_ftn1" name="_ftnref1">[1]</a> &#8221;</p>
 <h3>شواهد القراءات</h3>

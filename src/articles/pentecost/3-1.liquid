@@ -6,6 +6,9 @@ permalink: pentecost/3-1.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.96:5-6' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: pentecost/3-1.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <h3>بساطة الإعلان</h3>
 <p>تتكلم قراءات هذا اليوم عن <strong>بساطة الإعلان</strong>.. فالإحساس بالحضور الإلهي ليس شيئاً معقداً أو مستحيلاً أو غامضاً، بل كما يقول القديس أثناسيوس الرسولي: [أن الإنسان بالحس الدقيق يمكنه أن يتجه إلى الله].. فالنعمة قريبة من كل إنسان حتى ولو لم يشعر بذلك، كما يقول القديس أغسطينوس: [كُنْتَ قريباً مني لكن لشقاوتي كُنْتُ بعيداً عنك].</p>
 <p></p>

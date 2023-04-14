@@ -6,6 +6,9 @@ permalink: annual/13-1.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.65:4-5' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/13-1.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>قراءات هذا اليوم (شهادة أبو يحنس تلميذ يوحنا الإنجيلي وشهادة القديس بشاي الأنطاكي شقيق القديس باهور ) تتشابه إلي حد كبير مع قراءات رابع طوبة ( نياحة القديس يوحنا إبن زبدي الإنجيلي ) في البولس والكاثوليكون والإبركسيس وإنجيل القدَّاس بإختلاف المزامير وإنجيل عشيّة فقط لذلك يُمْكِن الرجوع لشرح قراءات رابع طوبة</p>
 <p>وتتشابه القراءتان في كلامهما مُباشرة عن يوحنا الإنجيلي (لذلك تأتي أيضاً في تذكار تلميذه أفتيخوس ) كما في الإبركسيس وإنجيل القدَّاس وأيضاً مجئ قراءات من إنجيل ورسائل القديس يوحنا كما في مزمور باكر والكاثوليكون</p>
 <p>يذكر الدفنار والسنكسار إسم أفتيخوس تلميذ يوحنا الإنجيلي بدلاً من أبو يحنس</p>

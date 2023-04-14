@@ -6,6 +6,9 @@ permalink: annual/10-13.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.34:7-8' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/10-13.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>قراءة هذا اليوم (تذكار رئيس الملائكة جبرائيل حسب السنكسار القبطي وثاني يوم تذكار ميخائيل رئيس الملائكة حسب القطمارس الحالي) مُحوَّلة علي قراءة اليوم الثالث من النسئ ( تذكار الملاك روفائيل )</p>
 <p>والعجيب في هذا اليوم أن قراءاته مُحوَّلة علي قراءات اليوم الثالث من الشهر الصغير (تذكار رئيس الملائكة رافائيل) رغم أن هذا اليوم حسب القطمارس الحالي هو ثاني يوم عيد تذكار رئيس الملائكة ميخائيل وكان يُمْكِن أن يُحوَّل علي قراءات يوم ثاني عشر هاتور (تذكار رئيس الملائكة ميخائيل )</p>
 <p>وحسب السنكسار القبطي هذا اليوم هو تذكار رئيس الملائكة جبرائيل وكان يُمْكِن أن يُحوَّل علي قراءات يوم ثاني وعشرون كيهك (تذكار غبريال رئيس الملائكة)</p>

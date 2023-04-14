@@ -9,7 +9,10 @@ katameros-preparation/articles
 
 # secrets
 .env
+
+# System Files
 .DS_Store
+Thumbs.db
 
 # logs
 *.log

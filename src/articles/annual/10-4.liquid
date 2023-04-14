@@ -6,6 +6,9 @@ permalink: annual/10-4.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.68:35,3' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/10-4.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>قراءة هذا اليوم ( شهادة أنبا سينوسيوس الشهيد ) مُحوَّلة علي قراءة يوم خامس عشر هاتور ( شهادة مار مينا العجايبي )</p>
 <p>تأتي أيضاً شهادة القديس الأنبا آمون والبارة صوفيه في الدفنار والسنكسار، بينما يضيف أيضاً السنكسار شهادة القديس يوحنا الهرقلي ، ونياحة القديس أبا هور ، ونياحة البابا يؤنس الثامن البطريرك ال ٨٠ من باباوات الكرازة المرقسية</p>
 

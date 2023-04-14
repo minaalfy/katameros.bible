@@ -6,6 +6,9 @@ permalink: annual/3-24.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.97:7-8' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/3-24.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>وأقيم لنفسي كاهنا أمينا يعمل حسب ما بقلبي ونفسي، وأبني له بيتا أمينا فيسير أمام مسيحي كل الأيام (١صم ٢: ٣٥)</p>
 <p>وأن أبذل كل جهدى فى تعليم الشعب الإيمان السليم، وقيادته فى حياة القداسة والبر. وأكون أنا نفسي قدوة في كل عمل صالح</p>
 <p>وأتعهد بأن أحب الرعية، وأعاملها بالرفق والحكمة، وأبذل ذاتى فى افتقاد الشعب، والاهتمام به من كل ناحية حسب طاقتى</p>

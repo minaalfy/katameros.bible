@@ -6,6 +6,9 @@ permalink: pentecost/6-1.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.47:1' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: pentecost/6-1.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <h3>ديناميكية الصعود</h3>
 <p>تتكلم قراءات هذا اليوم عن <strong>ديناميكية الصعود</strong>.. فالنفس التي تحيا مع المسيح هي في صعود مستمر، وإذا كانت لها ضعفات فهي سقطات مؤقتة عارضة.. لكن الصعود دائم لأن حركتها في المسيح دائماً إلى فوق &#8220;إن كنتم قد متم مع المسيح فأطلبوا ما فوق حيث المسيح جالس عن يمين الله. إهتموا بما فوق لا بما على الأرض&#8221; (كو 3: 1).</p>
 <p></p>

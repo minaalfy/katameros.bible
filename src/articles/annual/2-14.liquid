@@ -6,6 +6,9 @@ permalink: annual/2-14.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.68:35,3' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/2-14.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;ويكون أن كل نفس حية تدب حيثما يأتي النهران تحيا. ويكون السمك كثيراً جداً لأن هذه المياه تأتي إلى هناك فتشفى، ويحيا كل ما يأتي النهر إليه&#8221; (حز ٩:٤٧).</p>
 <p>[عبيدك الذين قدموا لك بنيهم&#8230; اقبلهم على مذبحك الناطق السمائي كرائحة بخور تدخل إلى عظمتك التي في السماوات&#8230; احفظهم في الإيمان المستقيم كل أيام حياتهم&#8230; اجعلهم في المحبة التي تفوق كل شيء]. (ليتورجيا المعمودية المُقدَّسة)</p>
 <p>[أضاء الروح القدس في كمال وجوده عليه، فالشبيه يستقر بالشبيه. أما بالنسبة لكم فبعدما صعدتم من جرن المياه المقدسة وُهبت لكم المسحة التي هي رمز لما مُسح به المسيح؛ هذا هو الروح القدس.] (القديس كيرلس الأورشليمي)<a href="#_ftn1" name="_ftnref1">[1]</a>.</p>

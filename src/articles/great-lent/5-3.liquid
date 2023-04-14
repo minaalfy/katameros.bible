@@ -6,6 +6,9 @@ permalink: great-lent/5-3.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/5-3.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;أَنَا الْكَرْمَةُ وَأَنْتُمُ الأَغْصَانُ. الَّذِي يَثْبُتُ فِيَّ وَأَنَا فِيهِ هذَا يَأْتِي بِثَمَرٍ كَثِيرٍ&#8221; (يو١٥: ٥)</p>
 <p>[ثبتني فيك غصناً حياً أيها الكرمة الحقيقية] (من صلوات القسمة المقدّسة)</p>
 <p>[أما الخمر الذي يستخرج من الكرمة الحقيقية فهو جديد على الدوام به يتجدد فهم المتعلمين للمعرفة الروحية والحكمة على الدوام] (العلامة أوريجانوس)<a href="#_ftn1" name="_ftnref1">[1]</a></p>

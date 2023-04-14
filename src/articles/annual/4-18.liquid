@@ -6,6 +6,9 @@ permalink: annual/4-18.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.105:1-3' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/4-18.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>قراءة هذا اليوم ( نقل جسد القديس تيطس تلميذ القديس بولس الرسول ) مُحوَّلة علي قراءة يوم ثاني وعشرين بابه )</p>
 <p>يضيف السنكسار أيضاً تذكار القديسين اياركلاس الشهيد وفيليمون القس</p>
 <p>والسؤال هنا لماذا لم تحول علي يوم ٢ نسئ ؟</p>

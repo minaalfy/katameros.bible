@@ -6,6 +6,9 @@ permalink: annual/11-14.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.112:1-2' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/11-14.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>قراءة هذا اليوم ( نياحة أبو مقار أو القديس مكاريوس الإسكندري أب القلالي ) مُحوَّلة علي قراءة يوم سابع وعشرين بابه ( نياحة أنبا مقار الأسقف )</p>
 <p>لم يأتِ ذكر لنياحة أبو مقار في الدفنار أو السنكسار !!</p>
 <p>جاء في الدفنار والسنكسار شهادة أبروكونيوس ( أو بروكوبيوس كما جاء في السنكسار ) ، وأضاف السنكسار نياحة البابا بطرس الخامس البطريرك ال ٨٣</p>

@@ -6,6 +6,9 @@ permalink: great-lent/3-6.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/3-6.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p><strong>موقفنا من الآخرين مدخل إستعلان برّ الآب</strong></p>
 <p>&#8220;ورد الرب سبي أيوب لما صلي لأجل أصحابه&#8221; (أي ٤٢: ١٠)</p>
 <p>[وأنت تحلُ داخلنا بالمحبة] (قسمة للابن)</p>

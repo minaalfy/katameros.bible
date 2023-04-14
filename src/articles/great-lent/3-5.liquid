@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'قراءات يوم الجمعــة من الأسبــوع الثـالث'
+title: 'قراءات يوم الجمعة من الأسبوع الثالث'
 permalink: great-lent/3-5.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/3-5.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;وَلَمَّا صَلَّوْا تَزَعْزَعَ الْمَكَانُ الَّذِي كَانُوا مُجْتَمِعِينَ فِيهِ، وَامْتَلأَ الْجَمِيعُ مِنَ الرُّوحِ الْقُدُسِ، وَكَانُوا يَتَكَلَّمُونَ بِكَلاَمِ اللهِ بِمُجَاهَرَةٍ.&#8221; (أع ٤: ٣١)</p>
 <p>[حاولوا أن تكثفوا اجتماعاتكم لتقدموا شكركم وتمجيدكم لله فعندما تجتمعون مراراً معاً في الإجتماع الإفخارستي تضمحل قوى الشيطان وتنحل قدرته أمام اتفاق إيمانكم وتآلفه] (القدّيس أغناطيوس)<a href="#_ftn1" name="_ftnref1">[1]</a></p>
 <p>[أيها المسيح إلهنا، ثبت أساس الكنيسة] (طلبات القداس الغريغوري).</p>

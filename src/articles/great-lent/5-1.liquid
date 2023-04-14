@@ -6,6 +6,9 @@ permalink: great-lent/5-1.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/5-1.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;أَنْتَ مُسْتَحِقٌ أَيُّهَا الرَّبُّ أَنْ تَأْخُذَ الْمَجْدَ وَالْكَرَامَةَ وَالْقُدْرَةَ، لأَنَّكَ أَنْتَ خَلَقْتَ كُلَّ الأَشْيَاءِ، وَهِيَ بِإِرَادَتِكَ كَائِنَةٌ وَخُلِقَتْ&#8221; (رؤ ٤: ١١).</p>
 <p>[أعطيت إطلاقاً لمن قبض عليهم في الجحيم، أزلت لعنة الناموس، أريتني قوة سلطانك أقمت الطبيعة بالكلمة] (القدّاس الغريغوري).</p>
 <p>[إذ ينتزع الإنسان من الهلاك يرفعه إلى السماويات غارساً المائت في الخلود ومحولاً الأرض سماء] (القديس اكليمنضس الإسكندري)<a href="#_ftn1" name="_ftnref1">[1]</a></p>

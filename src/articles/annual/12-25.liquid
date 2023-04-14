@@ -6,6 +6,9 @@ permalink: annual/12-25.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.42:1' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/12-25.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>تتماثل قراءات اليوم ( نياحة أنبا بيصاريون الكبير ) مع قراءات يوم ثاني وعشرين طوبه ( تذكار الأنبا أنطونيوس ) في كل شئ ما عدا المزامير والإبركسيس</p>
 <p>وكلا القراءتين في الإبركسيس يتكلمان عن التلمذة التي تتمشي مع الحياة الرهبانية فنري تلمذة شاول لبرنابا في قراءة ثاني وعشرين طوبه ( تذكار أنبا أنطونيوس ) وتلمذة أبلوس لأكيلا وبريسكلا  في قراءة خامس وعشرين مسري ( تذكار أنبا بيصاريون الكبير )</p>
 <p>لذلك يُمْكِن الرجوع لشرح قراءة ثاني وعشرين طوبه وهو الرأي الذي يقوله أيضاً الأرشيدياكون بانوب عبده في كتابه كنوز النعمة ( من برمهات إلي النسئ ص ٢٣١ )</p>

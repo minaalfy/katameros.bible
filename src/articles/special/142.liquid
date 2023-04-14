@@ -6,6 +6,9 @@ permalink: special/142.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: special/142.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <h3><span class="ez-toc-section" id="%D8%AA%D8%AD%D8%AF%D8%AB%D9%86%D8%A7_%D9%82%D8%B1%D8%A7%D8%A1%D8%A7%D8%AA_%D8%A7%D9%84%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A_%D8%B9%D9%86_%D8%AF%D9%8A%D9%86%D9%88%D9%86%D8%A9_%D8%B9%D8%AF%D9%85_%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D8%A9%D8%8C_%D9%88%D9%86%D8%AA%D9%8A%D8%AC%D8%A9_%D8%B1%D9%81%D8%B6_%D8%B5%D9%88%D8%AA_%D8%A7%D9%84%D8%B1%D9%88%D8%AD_%D9%88%D8%A7%D9%84%D8%A5%D8%B3%D8%AA%D9%87%D8%A7%D9%86%D8%A9_%D8%A8%D8%B7%D9%88%D9%84_%D8%A3%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%84%D9%87_%D9%88%D8%A7%D9%84%D8%A5%D8%B5%D8%B1%D8%A7%D8%B1_%D8%B9%D9%84%D9%89_%D8%A7%D9%84%D8%B4%D8%B1"></span><strong>تحدثنا</strong> <strong>قراءات</strong> <strong>اليوم</strong> <strong>الثاني</strong> عن دينونة عدم التوبة، ونتيجة رفض صوت الروح والإستهانة بطول أناة الله والإصرار على الشر.<span class="ez-toc-section-end"></span></h3>
 <p><strong>فيبدأ</strong> <strong>بصلاة</strong> <strong>يونان</strong> التي إعتقد فيها أن حياته إنتهت، وأن دينونته جاءت وحضرت، وصرخ من الأعماق لتفتقده مراحم الرب وينجو من الموت.</p>
 <p>&#8220;ومن جوف الجحيم سمع صوتي، فقلت إني قد طردت عن عينيك فهل أعود أنظر هيكل قدسك، فلتصعد حياتي من الفساد أيها الرب إلهي عند فناء نفسي مني تذكرت رحمة الرب &#8230;. إن الذين يحفظون الأباطيل والكذب يهملون رحمتهم&#8221;.</p>

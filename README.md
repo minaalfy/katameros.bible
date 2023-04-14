@@ -57,11 +57,10 @@ First we get the katameros data for that specific day reading and then get the j
 - Logic for redirecting to the right article URL on a date input by the user stored in `src/main.js` please read it.
 
 ## Road map for the known issues and suggested features
-- All days should work as expected except the Paskha days, so I'm currently will focus on this.
-- Add 11ty plugin to generate sitemap.xml to be subimtted to search engines.
+- Integrate a searching tool (ex: Algolia search) "I'm currently working on this".
+- Add coptic date picker.
+- Check the holy week katameros readings as it might be incorrect.
 - Add google analytics to the template with cookie consent.
-- Add coptic date picker
 - Create categories pages +  annual feasts page.
-- Integrate a searching tool (ex: Algolia search).
-- Personally I don't like the sliding animation for opening the navigation menu on mobile and see it's not smooth, also the Parchment SVG filter isn't working as expected on mobile so I've removed it from mmobile screens until fixing it.
 - Add theming and user settings "font sizes, theme, prefereed section sorting, collapsed/expanded state" etc.
+- Personally I don't like the sliding animation for opening the navigation menu on mobile and see it's not smooth, also the Parchment SVG filter isn't working as expected on mobile so I've removed it from mmobile screens until fixing it.

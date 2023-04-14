@@ -6,6 +6,9 @@ permalink: annual/1-19.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.45:6,17' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/1-19.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <h3>ديناميكية الصليب (الروح القدس وحمل الصليب في جهادنا اليومي)</h3>
 <h3>شواهد القراءات</h3>
 <p>(مز ٤٤: ٩ &#8211; ١٨)، (مت ١٦: ٢١ – ٢٦) ، (مز ٧٣ : ٢ ، ١١)، (مر ٨ : ٤٣ &#8211; ٩ :١)، (كو ٢ : ٦ – ١٩) ، (١يو ٥ : ١٣ – ٢١) ، (أع ٣ : ١٢ – ٢١)، (مز٦٠ : ٢ ، ٤) ، (لو ١٤ : ٢٥ – ٣٥)</p>

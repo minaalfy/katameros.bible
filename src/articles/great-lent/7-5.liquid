@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'قراءات يوم الجمعـة من الأسبـوع السابع'
+title: 'قراءات يوم الجمعة من الأسبوع السابع'
 permalink: great-lent/7-5.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/7-5.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;هكَذَا الْمَسِيحُ أَيْضًا، بَعْدَمَا قُدِّمَ مَرَّةً لِكَيْ يَحْمِلَ خَطَايَا كَثِيرِينَ، سَيَظْهَرُ ثَانِيَةً بِلاَ خَطِيَّةٍ لِلْخَلاَصِ لِلَّذِينَ يَنْتَظِرُونَهُ.&#8221; (عب ٩: ٢٨).</p>
 <p>[وأعطنا كمالنا المسيحي يرضيك أمامك لأن ملكوتك نقي ومملوء مجداً أيها المسيح إلهنا هذا الذي نرجو أن نناله كلنا] (القدّاس الغريغوري &#8211; صلاة وضع يد بعد التناول).</p>
 <p>[كما يقال للخاطئ أنت تراب وإلى التراب تعود هكذا يقال للقديس أنت سماء وإلى السماء تعود] (القديس جيروم)<a href="#_ftn1" name="_ftnref1">[1]</a></p>

@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'قراءات يوم الجمعـة من الأسبـوع الخـامس'
+title: 'قراءات يوم الجمعة من الأسبوع الخامس'
 permalink: great-lent/5-5.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/5-5.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;وَمَتَى ظَهَرَ رَئِيسُ الرُّعَاةِ تَنَالُونَ إِكْلِيلَ الْمَجْدِ الَّذِي لاَ يَبْلَى.&#8221; (١بط ٥: ٤)</p>
 <p>[كراع صالح سعيت في طلب الضال، أنت الذي أرسلت لي الأنبياء من أجلي أنا المريض] (القدّاس الغريغوري)</p>
 <p>[حتى الآن المسيح الملاصق لنا الذي أعد المائدة هو بنفسه يقدسها فإنه ليس إنسان يحول القرابين إلى جسد المسيح ودمه بل المسيح نفسه الذي صلب عنا ينطق الكاهن بالكلمات لكن التقديس يتم بقوة الله ونعمته بالكلمة التي نطق بها (هذا هو جسدي) تتقدس القرابين] (القديس يوحنا ذهبي الفم)<a href="#_ftn1" name="_ftnref1">[1]</a></p>

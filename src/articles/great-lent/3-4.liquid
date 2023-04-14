@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'قراءات يوم الخميس من الأسبـوع الثالث'
+title: 'قراءات يوم الخميس من الأسبوع الثالث'
 permalink: great-lent/3-4.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/3-4.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;هُوَذَا قَدْ جَاءَ الرَّبُّ فِي رَبَوَاتِ قِدِّيسِيه لِيَصْنَعَ دَيْنُونَةً عَلَى الْجَمِيعِ&#8221; (يه ١: ١٥،١٤)</p>
 <p>[ورسم يوماً للمجازاة هذا الذي يظهر فيه ليدين المسكونة بالعدل ويعطي كل واحد كنحو أعماله] (القدّاس الباسيلي)</p>
 <p>[لأن قايين لم يخف الله طوعاً، ملكت المخافة عليه كرهاً وأصبح مرتعباً هائماً على وجه الأرض، وتحت عذاب الخوف كان يرجو الله أن يجعل أي إنسان يقتله لكي يتخلص من هذه الحياة المملوءة خوفاً ورعباً]  (القديس مار فيلوكسينوس)<a href="#_ftn1" name="_ftnref1">[1]</a></p>

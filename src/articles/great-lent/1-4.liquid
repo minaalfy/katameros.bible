@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'قراءات يوم الخميس من الأسبــوع الأول'
+title: 'قراءات يوم الخميس من الأسبوع الأول'
 permalink: great-lent/1-4.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/1-4.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <h4>إله المجد والقوّة</h4>
 <p>&#8220;فَيُعْلَنُ مَجْدُ الرَّبِّ وَيَرَاهُ كُلُّ بَشَرٍ جَمِيعًاً&#8221; (إش ٤٠ : ٥)</p>
 <p>&#8220;وَنَحْنُ جَمِيعًا نَاظِرِينَ مَجْدَ الرَّبِّ بِوَجْهٍ مَكْشُوفٍ، كَمَا في مِرْآةٍ، نَتَغَيَّرُ إِلَى تِلْكَ الصُّورَةِ عَيْنِهَا، مِنْ مَجْدٍ إِلَى مَجْدٍ، كَمَا مِنَ الرَّبِّ الرُّوحِ&#8221; (٢كو ٣: ١٨)</p>

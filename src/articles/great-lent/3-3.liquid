@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'قراءات يوم الأربعــاء من الأسبـوع الثالث'
+title: 'قراءات يوم الأربعاء من الأسبوع الثالث'
 permalink: great-lent/3-3.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/3-3.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8220;ولكننا في هذه جميعها يعظم إنتصارنا بالذي أحبنا&#8221; (رو ٨: ٣٧)</p>
 <p>[كل من يقول يا ربى يسوع كمن بيده سيف يصرع العدو] (إبصالية الأثنين)</p>
 <p>[المؤمن الذي له دالة عند الله لو قامت عليه كل الخليقة تحاربه بأصوات وسحب لا تستطيع أن تهزمه لأن جميع ما يتكلم به ذلك الإنسان فمثل الله يتكلم وكل البرايا تطيعه أي تطيع الله الساكن فيه] (القديس يوحنا سابا)<a href="#_ftn1" name="_ftnref1">[1]</a></p>

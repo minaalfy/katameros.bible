@@ -6,6 +6,9 @@ permalink: sundays/11-4.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.59:10,17' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: sundays/11-4.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>في ذلك الحين استجيبت صلوات الاثنين أمام مجد الله العلي، (طو ٢٤:٣)</p>
 <p>&#8221; كمثل طبيب حقيقي داويت جميع أمراضنا &#8230; أنظر إلينا يا ربي يسوع بعين التحنن التي لصلاحك &#8221;  ابصالية الإثنين</p>
 <p>&#8221; حقًا الإيمان هو بركة عظيمة، ويصنع أمورًا عظيمة للذين يتمسكون بالحق ويتمتعون ببركات كثيرة &#8230;</p>

@@ -6,6 +6,9 @@ permalink: pentecost/3-0.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.116:1-2' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: pentecost/3-0.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <h3>الأبن خلاص الشعوب، وماء الحياة</h3>
 <p>&#8220;فرحاً أفرح بالرب. تبتهج نفسي بإلهي، لأنه قد ألبسني ثياب الخلاص. كساني رداء البر، مثل عريس يتزين بعمامة، ومثل عروس تتزين بحليها.</p>
 <p>لأنه كما أن الأرض تخرج نباتها، وكما أن الجنة تنبت مزروعاتها، هكذا السيد الرب ينبت براً وتسبيحاً أمام كل الأمم&#8221; (إش61: 10، 11).</p>

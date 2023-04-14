@@ -6,6 +6,9 @@ permalink: sundays/9-3.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.79:13,9' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: sundays/9-3.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8221; فتحب الرب إلهك من كل قلبك ومن كل نفسك ومن كل قوتك ولتكن هذه الكلمات التي أنا أوصيك بها اليوم على قلبك وقصها على أولادك، وتكلم بها حين تجلس في بيتك، وحين تمشي في الطريق، وحين تنام وحين تقوم واربطها علامة على يدك، ولتكن عصائب بين عينيك واكتبها على قوائم أبواب بيتك وعلى أبوابك &#8221; (تث ٦ : ٥-٩)</p>
 <p>&#8221; إذا ما أحببنا اسم الخلاص الذي لربنا يسوع المسيح وصنعنا الرحمة بعضنا مع بعض نكمل كل الناموس &#8221; إبصالية الأربعاء</p>
 <p>&#8221; طوبى للنفس التي جمعت نفسها من الطياشة الخارجة عنها، ودخلت داخلها ونظرت ربنا وهو متكئ على كرسيه الذي هو العقل، وقبلت منه وصية جديدة أعني الحب الروحي الذي هو كمال الناموس.<a href="#_ftn1" name="_ftnref1">[1]</a> &#8221;</p>

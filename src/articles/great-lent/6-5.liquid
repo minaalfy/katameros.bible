@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'قراءات يوم الجمعـة من الأسبـوع السادس'
+title: 'قراءات يوم الجمعة من الأسبوع السادس'
 permalink: great-lent/6-5.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/6-5.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <h4></h4>
 <p>&#8220;فَدُفِنَّا مَعَهُ بِالْمَعْمُودِيَّةِ لِلْمَوْتِ، حَتَّى كَمَا أُقِيمَ الْمَسِيحُ مِنَ الأَمْوَاتِ، بِمَجْدِ الآبِ، هكَذَا نَسْلُكُ نَحْنُ أَيْضًا فِي جِدَّةِ الْحَيَاةِ&#8221; (رو ٦: ٤)</p>
 <p>[أرعد أيها القادر الضابط الكل على هذه المياه لكي بها وبروح قدسك تجدد ميلاد عبيدك الذين تقدموا إليك] (من صلوات طقس المعمودية)</p>

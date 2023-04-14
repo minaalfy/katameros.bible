@@ -6,6 +6,9 @@ permalink: annual/3-12.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.149:1-2' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/3-12.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>&#8221; هأنذا أرسل ملاكي فيهيئ الطريق أمامي &#8221; (ملا ٣ : ١)</p>
 <p>( السلام للكنيسة بيت الملائكة ) ذكصولوجية باكر</p>
 <p>&#8221; خلال فترة عدم الإيمان يكون الإنسان تحت سيطرة ملائكة الشياطين، أما بعد التجديد (في الجرن) فيعيّن لنا ذاك الذي يخلصنا بدمه ملاكًا مقدسًا ينظر وجه الله بطهارته ، كما يقول: لكل نفس بشرية ملاك يقودها كأخ <a href="#_ftn1" name="_ftnref1">[1]</a> &#8221;</p>

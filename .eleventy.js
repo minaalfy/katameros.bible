@@ -4,6 +4,7 @@ const {
   makeVespers,
   makeMatins,
   makeLitugy,
+  makeHourly,
 } = require('./katameros-preparation/utils/readings-repository.js');
 const {
   createArticleAccordions,
@@ -38,6 +39,12 @@ module.exports = function (config) {
     'makeLitugy',
     async function (paulineRef, catholicRef, actsRef, psalmRef, gospelRef) {
       return makeLitugy(paulineRef, catholicRef, actsRef, psalmRef, gospelRef);
+    },
+  );
+  config.addShortcode(
+    'makeHour',
+    async function (psalmRef, gospelRef, prophecyRef1, prophecyRef2, prophecyRef3) {
+      return makeHourly(psalmRef, gospelRef, prophecyRef1, prophecyRef2, prophecyRef3);
     },
   );
   config.addPairedShortcode('createArticleAccordions', async function (content) {

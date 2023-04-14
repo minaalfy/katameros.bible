@@ -6,6 +6,9 @@ permalink: annual/7-30.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.34:7-8' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/7-30.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>قراءة هذا اليوم ( تذكار غبريال المبشر رئيس الملائكة ونياحة شمشون أحد قضاة بني إسرائيل ) مُحوَّلة علي قراءة يوم إثنين وعشرين كيهك ( تذكار تكريس كنيسة رئيس الملائكة غبريال في مدينة قيسارية وظهور العجائب بها )</p>
 <p>+ يضيف الدفنار والسنكسار أيضاً تذكار نقل أعضاء القديس يعقوب الشهير بالمقطع</p>
 <h4>كلمات القديس أغسطينوس عن شمشون</h4>

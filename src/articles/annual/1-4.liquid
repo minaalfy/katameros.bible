@@ -6,6 +6,9 @@ permalink: annual/1-4.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.105:14-15' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/1-4.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p align="right"><span dir="RTL" lang="AR-SA">قراءة اليوم الرابع من توت (نياحة يشوع بن نون والقديس سمعان الحبيس) مُحوَّلة علي قراءة يوم ٨ توت وهي القراءة الخاصة بأنبياء العهد القديم ( نياحة موسي النبي )</span><span lang="NL">  </span></p>
 <p align="right"><span dir="RTL" lang="AR-SA">وتذكار يشوع بن نون يأتي مرتان في السنة ( ٤ توت ، ٢٦ بؤونه ) واليومان مُحوَّلة قراءتهما علي قراءة يوم ٨ توت تذكار نياحة موسي النبي ، وكان رأي الأرشيدياكون بانوب عبده ( إعتماداً علي ما جاء بالؤلؤة صفحة ٥٨٤ ) أن يخصص يوم ٢٦ بؤونه للملاك غبريال وتُتْلي فيه فصول ٢٢ كيهك ، وبهذا لا يكون تذكار يشوع مكررا</span><span lang="NL"> .  </span></p>
 <p align="right"><span dir="RTL" lang="AR-SA">ويأتي تذكار اليوم في السنكسار، والدفنار نياحة القديس مقاريوس التاسع والستين من باباوات الإسكندرية ، ولم يأتِ فيهما نياحة يشوع بن نون أو القديس سمعان الحبيس</span></p>

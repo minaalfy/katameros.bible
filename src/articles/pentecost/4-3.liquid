@@ -6,6 +6,9 @@ permalink: pentecost/4-3.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.119:49,50' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: pentecost/4-3.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <h3>قراءة نصف الخمسين يوم المُقدسة</h3>
 <p>كما توجد قراءة لأحد النصف في قراءات الصوم الكبير «أحد النصف – السامرية»، توجد أيضاً قراءة يُمْكِنْ أن نُطْلِق عليها قراءة النصف للخمسين يوم المقدسة،</p>
 <p>لكن الإختلاف مع الصوم في أنه كان ثمانية أسابيع فجاءت قراءة النصف في أحد السامرية، ولكننا هنا في الخمسين يوم المقدسة «سبعة أسابيع» يأتي المنتصف في يوم الأربعاء للأسبوع الرابع!.</p>

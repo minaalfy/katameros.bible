@@ -259,6 +259,23 @@ function makeVespers(psalmRef, gospelRef, prophecyRef) {
   return createHTML(subSections);
 }
 // #endregion
+// #region Hourly
+function makeHourly(
+  psalmRef,
+  gospelRef,
+  prophecyRef1,
+  prophecyRef2,
+  prophecyRef3,
+) {
+  const subSections = [];
+  subSections.push(makeProphecies(prophecyRef1));
+  if (prophecyRef2) subSections.push(makeProphecies(prophecyRef2));
+  if (prophecyRef3) subSections.push(makeProphecies(prophecyRef3));
+
+  subSections.push(makePsalmAndGospel(psalmRef, gospelRef));
+  return createHTML(subSections);
+}
+// #endregion
 module.exports = {
   makeVespers,
   makeProphecies,
@@ -267,4 +284,5 @@ module.exports = {
   makeOldTestament,
   makeLitugy,
   makeMatins,
+  makeHourly,
 };

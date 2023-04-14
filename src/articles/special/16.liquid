@@ -6,6 +6,9 @@ permalink: special/16.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.50:2,23' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: special/16.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>أما أنت يا بيت لحم أفراتة، وأنت صغيرة أن تكوني بين ألوف يهوذا، فمنك يخرج لي الذي يكون متسلطا على إسرائيل، ومخارجه منذ القديم، منذ أيام الأزل (مي ٥ : ٢)</p>
 <p>أيها النور الحقيقي الذي يضئ لكل إنسان آت إلى العالم</p>
 <p>أتيت إلى العالم بمجدك للبشر وكل الخليقة تهللت بمجيئك.</p>

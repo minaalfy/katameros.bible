@@ -1,11 +1,14 @@
 ---
 layout: 'layouts/reading.html'
-title: 'يوم السبت من الاسيوع الثاني (سبت الجهـاد طريـق النصرة)'
+title: 'يوم السبت من الاسيوع الثاني (سبت الجهاد طريق النصرة)'
 permalink: great-lent/2-6.html
 ---
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if 'null' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: great-lent/2-6.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p><strong>جهادنا هو طريق نصرتنا</strong></p>
 <p>&#8220;أَخِيرًا يَا إِخْوَتِي تَقَوُّوْا فِي الرَّبِّ وَفِي شِدَّةِ قُوَّتِهِ. الْبَسُوا سِلاَحَ اللهِ الْكَامِلَ لِكَيْ تَقْدِرُوا أَنْ تَثْبُتُوا ضِدَّ مَكَايِدِ إِبْلِيسَ.<strong>&#8221; </strong><strong>(</strong>أف ٦: ١٠، ١١)</p>
 <p>[يا ربى يسوع المسيح الذى صُلب على الصليب إسحق الشيطان تحت أقدامنا] (ابصالية الخميس).</p>

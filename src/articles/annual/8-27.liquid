@@ -6,6 +6,9 @@ permalink: annual/8-27.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.4:6-8' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/8-27.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>تذكار شهادة القديس بقطر بن رومانوس )</p>
 <p>فإني متيقن أنه لا موت ولا حياة، ولا ملائكة ولا رؤساء ولا قوات، ولا أمور حاضرة ولا مستقبلة</p>
 <p>ولا علو ولا عمق، ولا خليقة أخرى، تقدر أن تفصلنا عن محبة الله التي في المسيح يسوع ربنا ) (رو ٨ : ٣٩،٣٨)</p>

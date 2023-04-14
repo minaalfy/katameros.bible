@@ -64,6 +64,24 @@ async function createArticleAccordions(content) {
   return $.root().html();
 }
 
+// clean content
+function cleanContent(content) {
+  return content
+    .replaceAll('ـ', '')
+    .replaceAll('&nbsp;', '')
+    .replaceAll('', '');
+}
+
+const hourNames = {
+  '1st': 'الساعة الأولى',
+  '3rd': 'الساعة الثالثة',
+  '6th': 'الساعة السادسة',
+  '9th': 'الساعة التاسعة',
+  '11th': 'الساعة الحادية عشر',
+};
+
 module.exports = {
   createArticleAccordions,
+  cleanContent,
+  hourNames,
 };

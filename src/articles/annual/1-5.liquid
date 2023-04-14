@@ -6,6 +6,9 @@ permalink: annual/1-5.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.68:25-26' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: annual/1-5.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <p>قراءة اليوم العاشر من توت (شهادة القديسة مطرونه ، وتذكار القديسة ياسين وأولادها الثلاثة ) مُحوَّلة علي يوم ثلاثين طوبه وهي القراءة الخاصة بشهادة العذاري هلبيس وبستيس وأغابي وصوفيا أمهم</p>
 <p>جاء ذكر القديسة ياسين وأولادها الثلاثة في السنكسار والدفنار</p>
 <p>ويقول الأرشيدياكون بانوب عبده في كتابه كنوز النعمة ( جزء أول ص ١٥٩ ) أنه طبقاً لدلال أبي مقار وبعض الصعيدين كان يجب أن تحُوَّل قراءاته ليوم أول بشنس</p>

@@ -6,6 +6,9 @@ permalink: pentecost/7-2.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.48:1' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: pentecost/7-2.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <h3>الكنيسة المغروسة على مجاري الروح القدس</h3>
 <p>تتكلم قراءات اليوم على <strong>الكنيسة المبنية والمؤسسة على فيض وملء الروح القدس</strong> &#8220;لأننا جميعنا بروح واحد إعتمدنا إلى جسد واحد يهوداً كنا أم يونانيين، عبيداً أم أحرار، وجميعنا سقينا روحاً واحدا&#8221;..</p>
 <p></p>

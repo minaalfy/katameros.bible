@@ -6,6 +6,9 @@ permalink: pentecost/4-2.html
   {% block content %}
     <section id="readings">
       <ul>
+      {% if 'undefined' != 'undefined' %}
+      
+      {% else %}
       {% if '19.67:1-2' != 'null' %}
       <li class="mb-2" x-data="{selected:false}">
         <button type="button" class="w-full px-4 py-2 bg-[#c46325] text-white text-xl" @click="selected =! selected">
@@ -47,11 +50,13 @@ permalink: pentecost/4-2.html
           </div>
         </div>
       </li>
+
+      {% endif %}
         </ul>
     </section>
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
-      {% createArticleAccordions firstName, lastName %}
+      {% createArticleAccordions %}
         <h3>قوة وسمو تعليم المسيح</h3>
 <p>تحدثنا قراءات اليوم عن <strong>قوة وسمو تعليم المسيح عن أي تعليم آخر، </strong>فتعليم البشر يرتبط بقدرتهم وسلطتهم وعلاقتهم المحدودة، أما تعليم المسيح فله القوة الإلهية المغيرة والمحيية من موت العالم وأوجاعه وأتعابه وأخطاره..</p>
 <p></p>

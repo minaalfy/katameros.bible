@@ -84,6 +84,10 @@ const getYearFeasts = (year) => [
     date: addDays(getEasterDate(year), -3),
   },
   {
+    id: EFeast.PaschaFriday,
+    date: addDays(getEasterDate(year), -2),
+  },
+  {
     id: EFeast.TheophanyParamoun,
     date: new Date(year, 0, 18),
   },

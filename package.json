@@ -80,6 +80,7 @@
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^6.0.0",
+    "glob": "^10.2.6",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "node-fetch-cache": "^3.1.1",
@@ -95,7 +96,8 @@
     "stylelint-no-unsupported-browser-features": "^6.1.0",
     "stylelint-order": "^6.0.3",
     "tailwindcss": "^3.2.7",
-    "vite-plugin-pwa": "^0.14.1"
+    "vite-plugin-minify": "^1.5.2",
+    "vite-plugin-pwa": "^0.14.7"
   },
   "dependencies": {
     "@11ty/eleventy-upgrade-help": "^2.0.5",

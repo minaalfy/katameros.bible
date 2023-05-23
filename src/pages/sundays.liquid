@@ -1,0 +1,42 @@
+---
+layout: 'layouts/reading.html'
+title: 'قراءات الآحاد'
+meta:
+  desc: 'لمحة تاريخية موجزة عن قراءات الآحاد والأيَّام في الكنيسة القبطية الأرثوذكسية - موضوع قراءات الآحاد - الثالوث في قراءات آحاد السنة القبطية - مقارنة قراءات آحاد السنة القبطية مع قراءات الكنائس التقليدية الأخري'
+intro:
+  title: 'قراءات الآحاد - دراسات في القراءات اليومية للكنيسة القبطية الارثوذكسية'
+permalink: /articles/sundays/index.html
+---
+
+<div class="entry-content">
+  <ul>
+    {%- for month in site.copticMonth -%}
+      <li class="mb-2" x-data="{selected:false}">
+        <button
+          type="button"
+          class="w-full px-4 py-2 bg-[#c46325] text-white text-xl"
+          @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">{{ forloop.index }} شهر {{ month }}</span>
+            <span
+              class="ico-plus"
+              :class="selected && 'opened'"
+              aria-hidden="true"></span>
+          </div>
+        </button>
+        <div
+          class="relative overflow-hidden transition-all max-h-0 duration-300"
+          x-ref="container1"
+          x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+            {%- assign monthIndex = forloop.index -%}
+            {% assign items = collections.sundays | filterByMonth: monthIndex %}
+            {% for post in items %}
+              <a href="{{ post.url }}" class="block mb-2 add-cross text-2xl">{{ post.data.title }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>

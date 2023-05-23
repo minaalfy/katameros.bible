@@ -1,17 +1,16 @@
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
-
-const { resolve } = require('path');
+import { resolve } from 'path';
+import { sync } from 'glob';
+import { ViteMinifyPlugin } from 'vite-plugin-minify';
 
 export default defineConfig({
   root: '_site',
+  appType: 'mpa',
   build: {
     outDir: '../dist',
     rollupOptions: {
-      input: {
-        404: resolve(__dirname, '_site', '404.html'),
-        main: resolve(__dirname, '_site', 'index.html'),
-      },
+      input: sync(resolve(__dirname, '_site', '**/**/*.html')),
     },
     emptyOutDir: true,
   },
@@ -20,7 +19,9 @@ export default defineConfig({
     open: true,
   },
   plugins: [
+    ViteMinifyPlugin({}),
     VitePWA({
+      injectRegister: null,
       includeAssets: [
         'favicon.svg',
         'favicon.ico',

@@ -13,6 +13,10 @@ import { dateIsFeast } from './utils/date-is-feast';
 window.Alpine = Alpine;
 
 Alpine.start();
+console.group();
+console.info('Since you are here why not contribute to the project?');
+console.info('https://github.com/minaalfy/katameros.bible');
+console.groupEnd();
 
 const env = document.querySelector('body').dataset.env;
 
@@ -28,7 +32,7 @@ window.getReadingsForDate = function (e) {
   const query = date.toISOString().split('T')[0];
 
   let dayFeast = dateIsFeast(date);
-  const subDir = env === 'production' ? '/new' : '';
+  const subDir = 'articles';
   if (dayFeast) {
     reading = `${subDir}/special/${dayFeast.id}.html?d=${query}`;
   } else if (

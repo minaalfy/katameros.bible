@@ -112,7 +112,8 @@ async function createDayContent(permalink, title, day, cleanedArticleContent) {
   const content = `---
 layout: 'layouts/reading.html'
 title: '${cleanedTitle}'
-permalink: ${permalink}
+tags: '${permalink.split('/')[0]}'
+permalink: /articles/${permalink}
 ---
   {% block content %}
     <section id="readings">
@@ -205,11 +206,14 @@ async function writeDayFiles(day, filename, articles, searchJson) {
   const title = JSON.parse(articleJson).title.rendered;
   const articleContent = JSON.parse(articleJson).content.rendered;
   const cleanedArticleContent = cleanContent(articleContent);
+  const strippedContent = cleanedArticleContent.replace(/(<([^>]+)>)/gi, '');
+  const searchableContent = strippedContent
+    .replace(/(\r\n|\n|\r)/gm, '')
+    .replaceAll('&#8230;', '…');
+
   searchJson.push({
-    id: day.Id,
-    articleId: articles[day.Id],
     title: title,
-    content: cleanedArticleContent,
+    content: searchableContent,
   });
 
   const content = await createDayContent(

@@ -69,6 +69,7 @@ function cleanContent(content) {
   return content
     .replaceAll('ـ', '')
     .replaceAll('&nbsp;', '')
+    .replaceAll('&#8211;', '-')
     .replaceAll('', '');
 }
 

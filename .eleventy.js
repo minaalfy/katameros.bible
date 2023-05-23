@@ -43,12 +43,42 @@ module.exports = function (config) {
   );
   config.addShortcode(
     'makeHour',
-    async function (psalmRef, gospelRef, prophecyRef1, prophecyRef2, prophecyRef3) {
-      return makeHourly(psalmRef, gospelRef, prophecyRef1, prophecyRef2, prophecyRef3);
+    async function (
+      psalmRef,
+      gospelRef,
+      prophecyRef1,
+      prophecyRef2,
+      prophecyRef3,
+    ) {
+      return makeHourly(
+        psalmRef,
+        gospelRef,
+        prophecyRef1,
+        prophecyRef2,
+        prophecyRef3,
+      );
     },
   );
-  config.addPairedShortcode('createArticleAccordions', async function (content) {
-    return await createArticleAccordions(content);    
+  config.addPairedShortcode(
+    'createArticleAccordions',
+    async function (content) {
+      return await createArticleAccordions(content);
+    },
+  );
+
+  function filterByMonth(values, month) {
+    let vals = [...values];
+    return vals.filter((item) => {
+      const itemMonth = item.inputPath.split('/').pop();
+      const aNum = parseInt(itemMonth.split('-')[0]);
+      return aNum === month;
+    });
+  }
+  config.addFilter('filterByMonth', filterByMonth);
+  ['special', 'sundays', 'annual', 'great-lent', 'pentecost'].forEach((cat) => {
+    config.addCollection(cat, function (collectionApi) {
+      return collectionApi.getFilteredByTag(cat);
+    });
   });
 
   config.setServerOptions({

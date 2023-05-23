@@ -4,6 +4,7 @@ node_modules
 # build artefacts
 _site
 dist
+.11ty-vite
 
 katameros-preparation/articles
 

@@ -59,8 +59,7 @@ First we get the katameros data for that specific day reading and then get the j
 ## Road map for the known issues and suggested features
 - Integrate a searching tool (ex: Algolia search) "I'm currently working on this".
 - Add coptic date picker.
-- Check the holy week katameros readings as it might be incorrect.
+- Design the 404 page.
 - Add google analytics to the template with cookie consent.
-- Create categories pages +  annual feasts page.
 - Add theming and user settings "font sizes, theme, prefereed section sorting, collapsed/expanded state" etc.
 - Personally I don't like the sliding animation for opening the navigation menu on mobile and see it's not smooth, also the Parchment SVG filter isn't working as expected on mobile so I've removed it from mmobile screens until fixing it.

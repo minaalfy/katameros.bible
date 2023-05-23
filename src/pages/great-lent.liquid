@@ -1,0 +1,41 @@
+---
+layout: 'layouts/reading.html'
+title: 'قراءات الصوم الكبير'
+meta:
+  desc: 'تاريخ قراءات الصوم الكبير - موضوع قراءات الصوم الكبير - الرابط بين قراءات الصوم وقراءات البصخة المقدسة وقراءات الخمسين يوم المقدسة - مقارنة بين قراءات الصوم الكبير في الكنائس'
+intro:
+  title: 'قراءات الصوم الكبير - دراسات في القراءات اليومية للكنيسة القبطية الارثوذكسية'
+permalink: /articles/great-lent/index.html
+---
+
+<div class="entry-content">
+  <ul>
+    {%- for week in site.numbers -%}
+      <li class="mb-2" x-data="{selected:false}">
+        <button
+          type="button"
+          class="w-full px-4 py-2 bg-[#c46325] text-white text-xl"
+          @click="selected =! selected">
+          <div class="flex items-center justify-between">
+            <span class="kufi">الاسبوع {{ week }}</span>
+            <span
+              class="ico-plus"
+              :class="selected && 'opened'"
+              aria-hidden="true"></span>
+          </div>
+        </button>
+        <div
+          class="relative overflow-hidden transition-all max-h-0 duration-300"
+          x-ref="container1"
+          x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-4">
+            {%- assign offsetNumber = forloop.index0 | times: 7 -%}
+            {% for post in collections['great-lent'] offset: offsetNumber limit: 7 %}
+              <a href="{{ post.url }}" class="block mb-2 add-cross text-2xl">{{ post.data.title }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>

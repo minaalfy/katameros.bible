@@ -1,0 +1,20 @@
+---
+layout: 'layouts/reading.html'
+title: 'فعاليات العام'
+meta:
+  desc:
+    'دراسات في القراءات اليومية للكنيسة القبطية الارثوذكسية'
+intro:
+  title: 'دراسات في القراءات اليومية للكنيسة القبطية الارثوذكسية'
+permalink: /articles/special/index.html
+---
+
+<div class="entry-content">
+  <ul>
+    {%- for post in collections.special -%}
+      <li class="mb-2">
+        <a href="{{ post.url }}" class="add-cross text-2xl">{{ post.data.title }}</a>
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>

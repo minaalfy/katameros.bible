@@ -22,7 +22,6 @@ const env = document.querySelector('body').dataset.env;
 
 window.getReadingsForDate = function (e) {
   let date = e ? new Date(e.target.value) : new Date();
-  date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
 
   const copticDate = getCopticDate(date);
   const [lentBeginning, lentEnding] = getGreatLentPeriod(date.getFullYear());
@@ -32,7 +31,7 @@ window.getReadingsForDate = function (e) {
   const query = date.toISOString().split('T')[0];
 
   let dayFeast = dateIsFeast(date);
-  const subDir = 'articles';
+  const subDir = '/articles';
   if (dayFeast) {
     reading = `${subDir}/special/${dayFeast.id}.html?d=${query}`;
   } else if (

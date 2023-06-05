@@ -8,7 +8,7 @@ eleventyExcludeFromCollections: true
     {% if not page.data.draft %}
       <url>
         <loc>{{ site.url }}{{ page.url | url }}</loc>
-        <lastmod>{{ page.date | date: "%a, %b %d, %y" }}</lastmod>
+        <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
       </url>
     {% endif %}
   {% endfor %}

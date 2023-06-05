@@ -14,6 +14,7 @@ const {
   sundaysArticles,
   specialArticles,
   annualArticles,
+  introArticles,
 } = require('./constants/articles');
 
 const directories = [
@@ -109,13 +110,15 @@ function createHourlTemplayte(day) {
 
 async function createDayContent(permalink, title, day, cleanedArticleContent) {
   let cleanedTitle = cleanContent(title);
-  const content = `---
+  let content = `---
 layout: 'layouts/reading.html'
 title: '${cleanedTitle}'
 tags: '${permalink.split('/')[0]}'
 permalink: /articles/${permalink}
 ---
-  {% block content %}
+  {% block content %}`;
+  if (typeof day === 'object') {
+    content += `
     <section id="readings">
       <ul>
       {% if '${day.Hours}' != 'undefined' %}
@@ -132,8 +135,8 @@ permalink: /articles/${permalink}
         <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
           <div class="p-4">
           {% makeVespers '${day.V_Psalm_Ref ? day.V_Psalm_Ref : ''}' '${
-    day.V_Gospel_Ref ? day.V_Gospel_Ref : ''
-  }' %}
+      day.V_Gospel_Ref ? day.V_Gospel_Ref : ''
+    }' %}
           </div>
         </div>
       </li>
@@ -148,8 +151,8 @@ permalink: /articles/${permalink}
         <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
           <div class="p-4">
           {% makeMatins '${day.M_Psalm_Ref}' '${day.M_Gospel_Ref}' '${
-    day.Prophecy ? day.Prophecy : ''
-  }' %}
+      day.Prophecy ? day.Prophecy : ''
+    }' %}
           </div>
         </div>
       </li>
@@ -163,15 +166,18 @@ permalink: /articles/${permalink}
         <div class="relative overflow-hidden transition-all max-h-0 duration-300" x-ref="container1" x-bind:style="selected ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
           <div class="p-4">
           {% makeLitugy '${day.P_Gospel_Ref}' '${day.C_Gospel_Ref}' '${
-    day.X_Gospel_Ref
-  }' '${day.L_Psalm_Ref}' '${day.L_Gospel_Ref}' %}
+      day.X_Gospel_Ref
+    }' '${day.L_Psalm_Ref}' '${day.L_Gospel_Ref}' %}
           </div>
         </div>
       </li>
 
       {% endif %}
         </ul>
-    </section>
+    </section>`;
+  }
+
+  content += `
     <section id="article">
       <h3 class="mt-8 mb-4 heading-explain">شرح القراءات</h3>
       {% createArticleAccordions %}
@@ -179,7 +185,7 @@ permalink: /articles/${permalink}
       {% endcreateArticleAccordions %}
     </section>
   {% endblock %}
-  `;
+`;
   return content;
 }
 
@@ -188,14 +194,15 @@ let greatLentSearchJson = [];
 let sundaysSearchJson = [];
 let annualSearchJson = [];
 let specialSearchJson = [];
+let introSearchJson = [];
 
-async function writeDayFiles(day, filename, articles, searchJson) {
+async function writeDayFiles(day, filename, articleId, searchJson) {
   const name = `./src/articles/${filename}.liquid`;
   const jsonPath = `./katameros-preparation/articles/${filename}.json`;
 
   const articleResponse = await fetch(
     'https://katameros.bible/wp-json/wp/v2/reads/' +
-      articles[day.Id] +
+      articleId +
       '?' +
       new URLSearchParams({
         _fields: 'title,content',
@@ -245,7 +252,7 @@ async function writeAllFiles() {
     await writeDayFiles(
       day,
       `pentecost/${day.Week}-${day.DayOfWeek}`,
-      pentecostArticles,
+      pentecostArticles[day.Id],
       pentecostSearchJson,
     );
   }
@@ -253,7 +260,7 @@ async function writeAllFiles() {
     await writeDayFiles(
       day,
       `great-lent/${day.Week}-${day.DayOfWeek}`,
-      greatLentArticles,
+      greatLentArticles[day.Id],
       greatLentSearchJson,
     );
   }
@@ -261,7 +268,7 @@ async function writeAllFiles() {
     await writeDayFiles(
       day,
       `sundays/${day.Month_Number}-${day.Day}`,
-      sundaysArticles,
+      sundaysArticles[day.Id],
       sundaysSearchJson,
     );
   }
@@ -269,7 +276,7 @@ async function writeAllFiles() {
     await writeDayFiles(
       day,
       `annual/${day.Month_Number}-${day.Day}`,
-      annualArticles,
+      annualArticles[day.Id],
       annualSearchJson,
     );
   }
@@ -277,10 +284,15 @@ async function writeAllFiles() {
     await writeDayFiles(
       day,
       `special/${day.Id}`,
-      specialArticles,
+      specialArticles[day.Id],
       specialSearchJson,
     );
   }
+  const kebabize = (str) =>
+    str.replace(
+      /[A-Z]+(?![a-z])|[A-Z]/g,
+      ($, ofs) => (ofs ? '-' : '') + $.toLowerCase(),
+    );
 
   for (const kind of [
     'pentecost',
@@ -288,7 +300,19 @@ async function writeAllFiles() {
     'sundays',
     'annual',
     'special',
+    'intro',
   ]) {
+    const intro = introArticles[kind];
+    if (intro) {
+      for (const articleId of intro) {
+        await writeDayFiles(
+          undefined,
+          `${kebabize(kind)}/${articleId}`,
+          articleId,
+          introSearchJson,
+        );
+      }
+    }
     fs.writeFile(
       `./src/public/${kind}.json`,
       JSON.stringify(eval(kind + 'SearchJson')),

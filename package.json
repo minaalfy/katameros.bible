@@ -66,7 +66,7 @@
     "@babel/eslint-parser": "^7.21.8",
     "@babel/preset-env": "^7.16.5",
     "@commitlint/cli": "^17.4.4",
-    "@commitlint/config-conventional": "^17.4.4",
+    "@commitlint/config-conventional": "^17.6.5",
     "@tailwindcss/typography": "^0.5.0",
     "autoprefixer": "^10.4.14",
     "bible-passage-reference-parser": "^2.0.1",

@@ -75,6 +75,15 @@ module.exports = function (config) {
     });
   }
   config.addFilter('filterByMonth', filterByMonth);
+  function filterByIntro(values, articles) {
+    let vals = [...values];
+    return vals.filter((item) => {
+      const itemUrl = item.url.split('/').pop();
+      const aNum = parseInt(itemUrl.split('.')[0]);
+      return articles.includes(aNum);
+    });
+  }
+  config.addFilter('filterByIntro', filterByIntro);
   ['special', 'sundays', 'annual', 'great-lent', 'pentecost'].forEach((cat) => {
     config.addCollection(cat, function (collectionApi) {
       return collectionApi.getFilteredByTag(cat);

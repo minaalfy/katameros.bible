@@ -552,10 +552,19 @@ const annualArticles = {
   365: 2628,
   366: 2630,
 };
+
+const introArticles = {
+  pentecost: [1055, 1056, 180, 1061, 1101, 1102, 1103],
+  greatLent: [51, 54, 180, 56, 266, 655, 71],
+  sundays: [1361, 1311, 1370, 1233, 1365, 1943],
+  annual: [1361, 1939, 1937, 1941, 1943, 1945, 1947],
+  special: [1941],
+};
 module.exports = {
   pentecostArticles,
   greatLentArticles,
   sundaysArticles,
   specialArticles,
   annualArticles,
+  introArticles,
 };

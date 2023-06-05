@@ -62,7 +62,7 @@
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-plugin-vite": "^4.0.0",
     "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.21.3",
+    "@babel/core": "^7.22.1",
     "@babel/eslint-parser": "^7.21.8",
     "@babel/preset-env": "^7.16.5",
     "@commitlint/cli": "^17.4.4",

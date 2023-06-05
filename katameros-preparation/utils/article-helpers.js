@@ -1,34 +1,6 @@
 const cheerio = require('cheerio');
-// const bcv_parser =
-//   require('bible-passage-reference-parser/js/ar_bcv_parser').bcv_parser;
-// const bcv = new bcv_parser();
-// const toEnglish = (s) => s.replace(/[٠-٩]/g, (d) => '٠١٢٣٤٥٦٧٨٩'.indexOf(d));
-// const toArabic = (s) => s.replace(/\d/g, (d) => '٠١٢٣٤٥٦٧٨٩'[d]);
 
 async function createArticleAccordions(content) {
-  // let trimmedContent = content
-  //   .replaceAll('ـ', '')
-  //   .replaceAll('&nbsp;', '')
-  //   .replaceAll('', '');
-
-  // matches.forEach((element) => {
-  //   const rtlString =
-  //     '\u200F' +
-  //     toArabic(element)
-  //       .replace(':', '\u200F' + ':' + '\u200F')
-  //       .replace('-', '-' + '\u200F')
-  //       .replace(')', '');
-  //   const [startVerse, endVerse] = bcv
-  //     .parse(toEnglish(element))
-  //     .osis()
-  //     .split('-');
-  //   trimmedContent = trimmedContent.replace(
-  //     element,
-  //     `<span class="verse" data-verse-start="${startVerse}" data-verse-end="${endVerse}" x-tooltip.on.click="{content: test,allowHTML: true, appendTo: $root}">${rtlString}</span>)`,
-  //   );
-  // });
-  // }
-
   const $ = await cheerio.load(content);
   $('div').each(function () {
     $(this).children().unwrap();
@@ -70,6 +42,11 @@ function cleanContent(content) {
     .replaceAll('ـ', '')
     .replaceAll('&nbsp;', '')
     .replaceAll('&#8211;', '-')
+    .replace(/<([^>]+)>\s*<\/\1>/g, '')
+    .replace(/<([^>]+)>\s*<\/\1>/g, '')
+    .replace(/<([^>]+)>\s*<\/\1>/g, '')
+    .replace(/\s(?:class|dir|lang|align)="[^"]*"/gim, '')
+    .replace(/^(\s)*$\n/gim, '')
     .replaceAll('', '');
 }
 

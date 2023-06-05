@@ -9,6 +9,10 @@ permalink: /articles/sundays/index.html
 ---
 
 <div class="entry-content">
+  {% assign items = collections.sundays | filterByIntro: site.introArticles.sundays %}
+  {%- for article in items -%}
+    <a href="{{article.url}}" class="block mb-2 add-cross text-2xl">{{ article.data.title }}</a>
+  {%- endfor -%}
   <ul>
     {%- for month in site.copticMonth -%}
       <li class="mb-2" x-data="{selected:false}">

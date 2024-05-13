@@ -201,7 +201,7 @@ async function writeDayFiles(day, filename, articleId, searchJson) {
   const jsonPath = `./katameros-preparation/articles/${filename}.json`;
 
   const articleResponse = await fetch(
-    'https://katameros.bible/wp-json/wp/v2/reads/' +
+    '' +
       articleId +
       '?' +
       new URLSearchParams({

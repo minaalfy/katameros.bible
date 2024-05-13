@@ -25,3 +25,4 @@ report.html
 
 # Local Netlify folder
 .netlify
+/pwa
